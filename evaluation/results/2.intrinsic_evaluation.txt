@@ -1,0 +1,29 @@
+using 700 test snippets for masked recovery
+--- masked token recovery ---
+  snippets evaluated: 700
+  masked positions:   178360
+  top-1 accuracy:     0.9158 (163347/178360)
+  top-5 accuracy:     0.9652 (172152/178360)
+  extracted 120 labeled instructions for task 'address_space'
+  class distribution: {0: 30, 1: 30, 2: 30, 3: 30}
+  using 30 global + 30 shared snippets
+--- address space separation ---
+  inter-class cosine (global vs shared): 0.3438
+  intra-class cosine (global):           0.6830
+  intra-class cosine (shared):           0.7137
+  separation gap:                        0.7090
+  extracted 60 labeled instructions for task 'instruction_type'
+  class distribution: {0: 30, 1: 30}
+  using 30 memory + 30 compute snippets
+--- instruction type separation (memory vs compute) ---
+  cosine similarity: 0.4608  
+  memory samples:    30
+  compute samples:   30
+======================================================================
+intrinsic evaluation summary
+======================================================================
+  masked recovery top-1:     0.9158
+  masked recovery top-5:     0.9652
+  addr space inter-cosine:   0.3438
+  mem vs compute cosine:     0.4608
+======================================================================

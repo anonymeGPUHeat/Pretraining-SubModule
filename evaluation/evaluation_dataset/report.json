@@ -1,0 +1,7146 @@
+{
+  "aggregate": {
+    "dataset_summary": {
+      "total_files": 41,
+      "valid_files": 41,
+      "error_files": 0,
+      "total_kernels": 44,
+      "total_static_instructions": 6025
+    },
+    "ptx_metadata": {
+      "ptx_version_distribution": {
+        "8.5": 41
+      },
+      "sm_target_distribution": {
+        "sm_87": 41
+      }
+    },
+    "instruction_coverage": {
+      "unique_opcodes_seen": 63,
+      "known_base_coverage_pct": 30.6,
+      "qualified_coverage_pct": 1.7,
+      "qualified_opcodes_seen": 25,
+      "qualified_opcodes_expected": 1445,
+      "top30_opcodes": {
+        "ld.shared.f32": 1109,
+        "fma.rn.ftz.f32": 639,
+        "add.s32": 588,
+        "mov.u32": 368,
+        "bra": 341,
+        "ld.global.nc.f32": 284,
+        "add.s64": 283,
+        "mul.wide.s32": 202,
+        "setp.ge.s32": 169,
+        "ld.param.u32": 159,
+        "ld.param.u64": 150,
+        "mov.f32": 148,
+        "cvta.to.global.u64": 147,
+        "mad.lo.s32": 145,
+        "shl.b32": 128,
+        "setp.lt.s32": 118,
+        "mul.lo.s32": 108,
+        "or.pred": 74,
+        "shr.s32": 73,
+        "st.shared.f32": 69,
+        "add.ftz.f32": 56,
+        "setp.eq.s32": 55,
+        "st.global.f32": 54,
+        "sub.s32": 46,
+        "bar.sync": 45,
+        "and.b32": 43,
+        "shr.u32": 43,
+        "bra.uni": 33,
+        "div.s32": 32,
+        "rem.s32": 32
+      },
+      "category_totals": {
+        "load_store": 1878,
+        "conversion": 171,
+        "data_movement": 545,
+        "integer_arith": 1548,
+        "comparison": 424,
+        "control_flow": 374,
+        "logic_shift": 395,
+        "float_arith": 639,
+        "synchronization": 45,
+        "atomic": 6
+      },
+      "category_pct": {
+        "load_store": 31.17,
+        "conversion": 2.84,
+        "data_movement": 9.05,
+        "integer_arith": 25.69,
+        "comparison": 7.04,
+        "control_flow": 6.21,
+        "logic_shift": 6.56,
+        "float_arith": 10.61,
+        "synchronization": 0.75,
+        "atomic": 0.1
+      }
+    },
+    "domain_coverage": {
+      "primary_domain_dist": {
+        "AI_TRAINING": 35,
+        "DATA_MODULE": 2,
+        "AI_INFERENCE": 1,
+        "HPC_STENCIL": 2,
+        "CRYPTOGRAPHY": 1
+      },
+      "domain_group_dist": {
+        "AI / Deep Learning": 36,
+        "Other": 2,
+        "HPC / Scientific": 2,
+        "Security / Crypto": 1
+      },
+      "domain_file_counts": {
+        "AI_TRAINING": 36,
+        "HPC_STENCIL": 22,
+        "GRAPHICS_RENDERING": 25,
+        "IMAGE_PROCESSING": 5,
+        "AI_INFERENCE": 4,
+        "PHYSICS_SIMULATION": 5,
+        "CRYPTOGRAPHY": 1,
+        "HPC_REDUCTION": 1,
+        "AI_LLM": 1,
+        "VIDEO_CODEC": 1
+      },
+      "domain_mean_scores": {
+        "AI_TRAINING": 56.8,
+        "DATA_MODULE": 0.0,
+        "AI_INFERENCE": 0.0,
+        "HPC_STENCIL": 28.0,
+        "CRYPTOGRAPHY": 135.0
+      },
+      "files_with_ai_kernels": 36,
+      "files_with_async_copy": 0
+    },
+    "l2_contention_analysis": {
+      "risk_level_distribution": {
+        "LOW": 39,
+        "NONE": 2
+      },
+      "total_global_loads": 320,
+      "total_global_stores": 54,
+      "total_atom_global": 4,
+      "total_red_global": 0,
+      "total_atom_shared": 2,
+      "mean_l2_pressure_score": 9.5,
+      "mean_coalescing_ratio": 1.0,
+      "total_uncoalesced_patterns": 0,
+      "total_coalesced_patterns": 186,
+      "total_shared_bank_risk": 0,
+      "stride_value_histogram": {
+        "4": 200,
+        "132": 2,
+        "16": 2
+      },
+      "cache_modifier_distribution": {},
+      "vector_ld_count": 4,
+      "vector_st_count": 0,
+      "files_with_prefetch": 0
+    },
+    "memory_breakdown": {
+      "ld_global": 320,
+      "st_global": 54,
+      "ld_shared": 1109,
+      "st_shared": 79,
+      "ld_local": 2,
+      "st_local": 2,
+      "ld_const": 0,
+      "atom_global": 4,
+      "atom_shared": 2,
+      "red_global": 0,
+      "cp_async": 0
+    },
+    "shared_memory_analysis": {
+      "files_using_shared_mem": 0,
+      "max_smem_bytes_any_kernel": 0,
+      "mean_smem_bytes": 0,
+      "total_smem_bytes_all": 0
+    },
+    "warp_divergence": {
+      "total_predicated_branches": 341,
+      "mean_pred_branches_per_file": 8.3,
+      "files_with_divergence": 39
+    },
+    "register_pressure": {
+      "mean_max_vreg_per_file": 78.9,
+      "max_vreg_any_file": 241
+    },
+    "precision_breakdown": {
+      "counts": {
+        "u64": 313,
+        "u32": 627,
+        "s32": 1629,
+        "s64": 283,
+        "f32": 2453,
+        "b32": 194,
+        "b64": 15,
+        "pred": 85,
+        "u8": 3,
+        "s16": 4
+      },
+      "pct": {
+        "u64": 5.58,
+        "u32": 11.18,
+        "s32": 29.06,
+        "s64": 5.05,
+        "f32": 43.76,
+        "b32": 3.46,
+        "b64": 0.27,
+        "pred": 1.52,
+        "u8": 0.05,
+        "s16": 0.07
+      }
+    },
+    "functional_split": {
+      "compute": 2611,
+      "memory": 1884,
+      "overhead": 1530,
+      "compute_pct": 43.3,
+      "memory_pct": 31.3,
+      "overhead_pct": 25.4
+    }
+  },
+  "per_file": [
+    {
+      "file": "00000_1_Conv2D_ReLU_BiasAdd.ptx",
+      "path": "../raw/00000_1_Conv2D_ReLU_BiasAdd.ptx",
+      "size_kb": 7.15,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z23conv2d_relu_bias_kernelPKfS0_S0_S0_Pfiiiiiiiii"
+      ],
+      "total_virtual_regs": 145,
+      "max_vreg_per_kernel": 57,
+      "mean_vreg_per_kernel": 36.2,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 125,
+      "instruction_category_counts": {
+        "load_store": 31,
+        "conversion": 7,
+        "data_movement": 11,
+        "integer_arith": 45,
+        "comparison": 11,
+        "control_flow": 11,
+        "logic_shift": 2,
+        "float_arith": 7
+      },
+      "top20_opcodes": {
+        "ld.global.nc.f32": 16,
+        "bra": 11,
+        "add.s32": 11,
+        "ld.param.u32": 9,
+        "mov.u32": 9,
+        "add.s64": 9,
+        "mul.lo.s32": 7,
+        "fma.rn.ftz.f32": 7,
+        "mul.wide.s32": 6,
+        "ld.param.u64": 5,
+        "cvta.to.global.u64": 5,
+        "setp.lt.s32": 5,
+        "mad.lo.s32": 3,
+        "div.s32": 3,
+        "rem.s32": 3,
+        "setp.eq.s32": 3,
+        "setp.ge.s32": 1,
+        "cvt.s64.s32": 1,
+        "and.b32": 1,
+        "sub.s32": 1
+      },
+      "unique_opcodes": 29,
+      "opcode_histogram": {
+        "ld.param.u64": 5,
+        "ld.param.u32": 9,
+        "cvta.to.global.u64": 5,
+        "mov.u32": 9,
+        "mad.lo.s32": 3,
+        "mul.lo.s32": 7,
+        "setp.ge.s32": 1,
+        "bra": 11,
+        "div.s32": 3,
+        "rem.s32": 3,
+        "cvt.s64.s32": 1,
+        "mul.wide.s32": 6,
+        "add.s64": 9,
+        "ld.global.nc.f32": 16,
+        "setp.lt.s32": 5,
+        "add.s32": 11,
+        "and.b32": 1,
+        "sub.s32": 1,
+        "cvt.u32.u64": 1,
+        "setp.lt.u32": 1,
+        "mov.u64": 1,
+        "fma.rn.ftz.f32": 7,
+        "setp.ne.s32": 1,
+        "setp.eq.s32": 3,
+        "shl.b64": 1,
+        "mov.f32": 1,
+        "max.ftz.f32": 1,
+        "add.ftz.f32": 1,
+        "st.global.f32": 1
+      },
+      "precision_counts": {
+        "u64": 11,
+        "u32": 20,
+        "s32": 45,
+        "s64": 9,
+        "f32": 27,
+        "b32": 1,
+        "b64": 1
+      },
+      "precision_pct": {
+        "u64": 9.65,
+        "u32": 17.54,
+        "s32": 39.47,
+        "s64": 7.89,
+        "f32": 23.68,
+        "b32": 0.88,
+        "b64": 0.88
+      },
+      "functional_split": {
+        "compute": 63,
+        "memory": 31,
+        "overhead": 31
+      },
+      "functional_split_pct": {
+        "compute": 50.4,
+        "memory": 24.8,
+        "overhead": 24.8
+      },
+      "memory_access_counts": {
+        "ld_global": 16,
+        "st_global": 1,
+        "ld_shared": 0,
+        "st_shared": 0,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 6,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 6
+        }
+      },
+      "l2_pressure_score": 17,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 0.0,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 11,
+        "setp_count": 11
+      },
+      "special_register_uses": 3,
+      "special_register_types": {
+        "%ntid": 1,
+        "%ctaid": 1,
+        "%tid": 1
+      },
+      "domain_scores": {
+        "AI_TRAINING": 25,
+        "HPC_STENCIL": 16
+      },
+      "domains": [
+        "AI_TRAINING",
+        "HPC_STENCIL"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "AI_TRAINING",
+          25
+        ],
+        [
+          "HPC_STENCIL",
+          16
+        ]
+      ],
+      "regex_domain": "AI_TRAINING",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 52,
+      "memory_ops": 17,
+      "arithmetic_intensity": 3.059,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00000_1_MLP.ptx",
+      "path": "../raw/00000_1_MLP.ptx",
+      "size_kb": 1.29,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 0,
+      "kernel_names": [],
+      "total_virtual_regs": 0,
+      "max_vreg_per_kernel": 0,
+      "mean_vreg_per_kernel": 0,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 0,
+      "instruction_category_counts": {},
+      "top20_opcodes": {},
+      "unique_opcodes": 0,
+      "opcode_histogram": {},
+      "precision_counts": {},
+      "precision_pct": {},
+      "functional_split": {
+        "compute": 0,
+        "memory": 0,
+        "overhead": 0
+      },
+      "functional_split_pct": {},
+      "memory_access_counts": {
+        "ld_global": 0,
+        "st_global": 0,
+        "ld_shared": 0,
+        "st_shared": 0,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 0,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {}
+      },
+      "l2_pressure_score": 0,
+      "coalescing_ratio": null,
+      "shared_to_global_ratio": null,
+      "atomic_density_per1k": 0,
+      "warp_divergence": {
+        "predicated_branches": 0,
+        "setp_count": 0
+      },
+      "special_register_uses": 0,
+      "special_register_types": {},
+      "domain_scores": {},
+      "domains": [],
+      "primary_domain": "DATA_MODULE",
+      "top3_domains": [],
+      "regex_domain": "DATA_MODULE",
+      "llm_domain": "DATA_MODULE",
+      "domain_group": "Other",
+      "compute_ops": 0,
+      "memory_ops": 0,
+      "arithmetic_intensity": null,
+      "l2_contention_risk": "NONE"
+    },
+    {
+      "file": "00000_1_Square_matrix_multiplication_.ptx",
+      "path": "../raw/00000_1_Square_matrix_multiplication_.ptx",
+      "size_kb": 6.13,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z19matmul_tiled_kernelPKfS0_Pfi"
+      ],
+      "total_virtual_regs": 133,
+      "max_vreg_per_kernel": 63,
+      "mean_vreg_per_kernel": 33.2,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 122,
+      "instruction_category_counts": {
+        "load_store": 41,
+        "data_movement": 12,
+        "logic_shift": 11,
+        "integer_arith": 24,
+        "comparison": 8,
+        "control_flow": 5,
+        "conversion": 3,
+        "synchronization": 2,
+        "float_arith": 16
+      },
+      "top20_opcodes": {
+        "ld.shared.f32": 32,
+        "fma.rn.ftz.f32": 16,
+        "add.s32": 14,
+        "mov.u32": 7,
+        "setp.ge.s32": 6,
+        "shl.b32": 5,
+        "mov.f32": 5,
+        "bra": 5,
+        "add.s64": 4,
+        "ld.param.u64": 3,
+        "mad.lo.s32": 3,
+        "cvta.to.global.u64": 3,
+        "mul.wide.s32": 3,
+        "or.pred": 3,
+        "setp.lt.s32": 2,
+        "shr.s32": 2,
+        "ld.global.nc.f32": 2,
+        "st.shared.f32": 2,
+        "bar.sync": 2,
+        "ld.param.u32": 1
+      },
+      "unique_opcodes": 22,
+      "opcode_histogram": {
+        "ld.param.u64": 3,
+        "ld.param.u32": 1,
+        "mov.u32": 7,
+        "shl.b32": 5,
+        "add.s32": 14,
+        "setp.lt.s32": 2,
+        "mov.f32": 5,
+        "bra": 5,
+        "mad.lo.s32": 3,
+        "cvta.to.global.u64": 3,
+        "mul.wide.s32": 3,
+        "add.s64": 4,
+        "shr.s32": 2,
+        "shr.u32": 1,
+        "setp.ge.s32": 6,
+        "or.pred": 3,
+        "ld.global.nc.f32": 2,
+        "st.shared.f32": 2,
+        "bar.sync": 2,
+        "ld.shared.f32": 32,
+        "fma.rn.ftz.f32": 16,
+        "st.global.f32": 1
+      },
+      "precision_counts": {
+        "u64": 6,
+        "u32": 9,
+        "b32": 5,
+        "s32": 30,
+        "f32": 58,
+        "s64": 4,
+        "pred": 3
+      },
+      "precision_pct": {
+        "u64": 5.22,
+        "u32": 7.83,
+        "b32": 4.35,
+        "s32": 26.09,
+        "f32": 50.43,
+        "s64": 3.48,
+        "pred": 2.61
+      },
+      "functional_split": {
+        "compute": 48,
+        "memory": 41,
+        "overhead": 33
+      },
+      "functional_split_pct": {
+        "compute": 39.3,
+        "memory": 33.6,
+        "overhead": 27.0
+      },
+      "memory_access_counts": {
+        "ld_global": 2,
+        "st_global": 1,
+        "ld_shared": 32,
+        "st_shared": 2,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 2,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 3
+        }
+      },
+      "l2_pressure_score": 3,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 11.333,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 5,
+        "setp_count": 8
+      },
+      "special_register_uses": 4,
+      "special_register_types": {
+        "%ctaid": 2,
+        "%tid": 2
+      },
+      "domain_scores": {
+        "AI_TRAINING": 48,
+        "GRAPHICS_RENDERING": 9
+      },
+      "domains": [
+        "AI_TRAINING",
+        "GRAPHICS_RENDERING"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "AI_TRAINING",
+          48
+        ],
+        [
+          "GRAPHICS_RENDERING",
+          9
+        ]
+      ],
+      "regex_domain": "AI_TRAINING",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 40,
+      "memory_ops": 37,
+      "arithmetic_intensity": 1.081,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00001_block_size_optimized_base.ptx",
+      "path": "../raw/00001_block_size_optimized_base.ptx",
+      "size_kb": 7.78,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z19matmul_tiled_kernelPKfS0_Pfi"
+      ],
+      "total_virtual_regs": 181,
+      "max_vreg_per_kernel": 111,
+      "mean_vreg_per_kernel": 45.2,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 170,
+      "instruction_category_counts": {
+        "load_store": 73,
+        "data_movement": 12,
+        "logic_shift": 11,
+        "integer_arith": 24,
+        "comparison": 8,
+        "control_flow": 5,
+        "conversion": 3,
+        "synchronization": 2,
+        "float_arith": 32
+      },
+      "top20_opcodes": {
+        "ld.shared.f32": 64,
+        "fma.rn.ftz.f32": 32,
+        "add.s32": 14,
+        "mov.u32": 7,
+        "setp.ge.s32": 6,
+        "shl.b32": 5,
+        "mov.f32": 5,
+        "bra": 5,
+        "add.s64": 4,
+        "ld.param.u64": 3,
+        "mad.lo.s32": 3,
+        "cvta.to.global.u64": 3,
+        "mul.wide.s32": 3,
+        "or.pred": 3,
+        "setp.lt.s32": 2,
+        "shr.s32": 2,
+        "ld.global.nc.f32": 2,
+        "st.shared.f32": 2,
+        "bar.sync": 2,
+        "ld.param.u32": 1
+      },
+      "unique_opcodes": 22,
+      "opcode_histogram": {
+        "ld.param.u64": 3,
+        "ld.param.u32": 1,
+        "mov.u32": 7,
+        "shl.b32": 5,
+        "add.s32": 14,
+        "setp.lt.s32": 2,
+        "mov.f32": 5,
+        "bra": 5,
+        "mad.lo.s32": 3,
+        "cvta.to.global.u64": 3,
+        "mul.wide.s32": 3,
+        "add.s64": 4,
+        "shr.s32": 2,
+        "shr.u32": 1,
+        "setp.ge.s32": 6,
+        "or.pred": 3,
+        "ld.global.nc.f32": 2,
+        "st.shared.f32": 2,
+        "bar.sync": 2,
+        "ld.shared.f32": 64,
+        "fma.rn.ftz.f32": 32,
+        "st.global.f32": 1
+      },
+      "precision_counts": {
+        "u64": 6,
+        "u32": 9,
+        "b32": 5,
+        "s32": 30,
+        "f32": 106,
+        "s64": 4,
+        "pred": 3
+      },
+      "precision_pct": {
+        "u64": 3.68,
+        "u32": 5.52,
+        "b32": 3.07,
+        "s32": 18.4,
+        "f32": 65.03,
+        "s64": 2.45,
+        "pred": 1.84
+      },
+      "functional_split": {
+        "compute": 64,
+        "memory": 73,
+        "overhead": 33
+      },
+      "functional_split_pct": {
+        "compute": 37.6,
+        "memory": 42.9,
+        "overhead": 19.4
+      },
+      "memory_access_counts": {
+        "ld_global": 2,
+        "st_global": 1,
+        "ld_shared": 64,
+        "st_shared": 2,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 2,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 3
+        }
+      },
+      "l2_pressure_score": 3,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 22.0,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 5,
+        "setp_count": 8
+      },
+      "special_register_uses": 4,
+      "special_register_types": {
+        "%ctaid": 2,
+        "%tid": 2
+      },
+      "domain_scores": {
+        "AI_TRAINING": 96,
+        "GRAPHICS_RENDERING": 9
+      },
+      "domains": [
+        "AI_TRAINING",
+        "GRAPHICS_RENDERING"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "AI_TRAINING",
+          96
+        ],
+        [
+          "GRAPHICS_RENDERING",
+          9
+        ]
+      ],
+      "regex_domain": "AI_TRAINING",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 56,
+      "memory_ops": 69,
+      "arithmetic_intensity": 0.812,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00001_modular_conv2d_relu_bias_base.ptx",
+      "path": "../raw/00001_modular_conv2d_relu_bias_base.ptx",
+      "size_kb": 7.55,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z31modular_conv2d_relu_bias_kernelPKfS0_S0_S0_Pfiiiiiiiii"
+      ],
+      "total_virtual_regs": 150,
+      "max_vreg_per_kernel": 57,
+      "mean_vreg_per_kernel": 37.5,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 128,
+      "instruction_category_counts": {
+        "load_store": 31,
+        "conversion": 7,
+        "data_movement": 13,
+        "integer_arith": 46,
+        "comparison": 11,
+        "control_flow": 11,
+        "logic_shift": 2,
+        "float_arith": 7
+      },
+      "top20_opcodes": {
+        "ld.global.nc.f32": 16,
+        "bra": 11,
+        "add.s32": 11,
+        "ld.param.u32": 9,
+        "mov.u32": 9,
+        "add.s64": 9,
+        "mul.lo.s32": 7,
+        "fma.rn.ftz.f32": 7,
+        "mul.wide.s32": 6,
+        "ld.param.u64": 5,
+        "cvta.to.global.u64": 5,
+        "setp.lt.s32": 5,
+        "mad.lo.s32": 3,
+        "mov.f32": 3,
+        "div.s32": 3,
+        "rem.s32": 3,
+        "setp.eq.s32": 3,
+        "add.ftz.f32": 2,
+        "setp.ge.s32": 1,
+        "cvt.s64.s32": 1
+      },
+      "unique_opcodes": 29,
+      "opcode_histogram": {
+        "ld.param.u64": 5,
+        "ld.param.u32": 9,
+        "cvta.to.global.u64": 5,
+        "mov.u32": 9,
+        "mad.lo.s32": 3,
+        "mul.lo.s32": 7,
+        "setp.ge.s32": 1,
+        "mov.f32": 3,
+        "bra": 11,
+        "div.s32": 3,
+        "rem.s32": 3,
+        "cvt.s64.s32": 1,
+        "mul.wide.s32": 6,
+        "add.s64": 9,
+        "ld.global.nc.f32": 16,
+        "setp.lt.s32": 5,
+        "add.s32": 11,
+        "and.b32": 1,
+        "sub.s32": 1,
+        "cvt.u32.u64": 1,
+        "setp.lt.u32": 1,
+        "mov.u64": 1,
+        "fma.rn.ftz.f32": 7,
+        "setp.ne.s32": 1,
+        "setp.eq.s32": 3,
+        "add.ftz.f32": 2,
+        "max.ftz.f32": 1,
+        "shl.b64": 1,
+        "st.global.f32": 1
+      },
+      "precision_counts": {
+        "u64": 11,
+        "u32": 20,
+        "s32": 45,
+        "f32": 30,
+        "s64": 9,
+        "b32": 1,
+        "b64": 1
+      },
+      "precision_pct": {
+        "u64": 9.4,
+        "u32": 17.09,
+        "s32": 38.46,
+        "f32": 25.64,
+        "s64": 7.69,
+        "b32": 0.85,
+        "b64": 0.85
+      },
+      "functional_split": {
+        "compute": 64,
+        "memory": 31,
+        "overhead": 33
+      },
+      "functional_split_pct": {
+        "compute": 50.0,
+        "memory": 24.2,
+        "overhead": 25.8
+      },
+      "memory_access_counts": {
+        "ld_global": 16,
+        "st_global": 1,
+        "ld_shared": 0,
+        "st_shared": 0,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 6,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 6
+        }
+      },
+      "l2_pressure_score": 17,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 0.0,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 11,
+        "setp_count": 11
+      },
+      "special_register_uses": 3,
+      "special_register_types": {
+        "%ntid": 1,
+        "%ctaid": 1,
+        "%tid": 1
+      },
+      "domain_scores": {
+        "AI_TRAINING": 25,
+        "HPC_STENCIL": 16
+      },
+      "domains": [
+        "AI_TRAINING",
+        "HPC_STENCIL"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "AI_TRAINING",
+          25
+        ],
+        [
+          "HPC_STENCIL",
+          16
+        ]
+      ],
+      "regex_domain": "AI_TRAINING",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 53,
+      "memory_ops": 17,
+      "arithmetic_intensity": 3.118,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00002_mlp_optimized_base.ptx",
+      "path": "../raw/00002_mlp_optimized_base.ptx",
+      "size_kb": 6.94,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z16mlp_layer_kernelPKfS0_S0_Pfiiib"
+      ],
+      "total_virtual_regs": 150,
+      "max_vreg_per_kernel": 66,
+      "mean_vreg_per_kernel": 30.0,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 137,
+      "instruction_category_counts": {
+        "load_store": 46,
+        "data_movement": 12,
+        "logic_shift": 11,
+        "integer_arith": 28,
+        "comparison": 12,
+        "control_flow": 6,
+        "conversion": 4,
+        "synchronization": 2,
+        "float_arith": 16
+      },
+      "top20_opcodes": {
+        "ld.shared.f32": 32,
+        "fma.rn.ftz.f32": 16,
+        "add.s32": 13,
+        "mov.u32": 7,
+        "bra": 6,
+        "add.s64": 6,
+        "setp.ge.s32": 6,
+        "mov.f32": 5,
+        "ld.param.u64": 4,
+        "shl.b32": 4,
+        "cvta.to.global.u64": 4,
+        "mul.wide.s32": 4,
+        "or.pred": 4,
+        "ld.param.u32": 3,
+        "mad.lo.s32": 3,
+        "ld.global.nc.f32": 3,
+        "shr.s32": 2,
+        "setp.lt.s32": 2,
+        "st.shared.f32": 2,
+        "bar.sync": 2
+      },
+      "unique_opcodes": 29,
+      "opcode_histogram": {
+        "ld.param.u8": 1,
+        "ld.param.u64": 4,
+        "ld.param.u32": 3,
+        "mov.u32": 7,
+        "shl.b32": 4,
+        "add.s32": 13,
+        "shr.s32": 2,
+        "shr.u32": 1,
+        "setp.lt.s32": 2,
+        "mov.f32": 5,
+        "bra": 6,
+        "neg.s32": 1,
+        "mad.lo.s32": 3,
+        "cvta.to.global.u64": 4,
+        "mul.wide.s32": 4,
+        "add.s64": 6,
+        "setp.ge.s32": 6,
+        "or.pred": 4,
+        "ld.global.nc.f32": 3,
+        "st.shared.f32": 2,
+        "bar.sync": 2,
+        "ld.shared.f32": 32,
+        "fma.rn.ftz.f32": 16,
+        "setp.eq.s32": 1,
+        "add.ftz.f32": 1,
+        "setp.gt.ftz.f32": 1,
+        "setp.eq.s16": 1,
+        "selp.f32": 1,
+        "st.global.f32": 1
+      },
+      "precision_counts": {
+        "u8": 1,
+        "u64": 8,
+        "u32": 11,
+        "b32": 4,
+        "s32": 32,
+        "f32": 62,
+        "s64": 6,
+        "pred": 4,
+        "s16": 1
+      },
+      "precision_pct": {
+        "u8": 0.78,
+        "u64": 6.2,
+        "u32": 8.53,
+        "b32": 3.1,
+        "s32": 24.81,
+        "f32": 48.06,
+        "s64": 4.65,
+        "pred": 3.1,
+        "s16": 0.78
+      },
+      "functional_split": {
+        "compute": 56,
+        "memory": 46,
+        "overhead": 35
+      },
+      "functional_split_pct": {
+        "compute": 40.9,
+        "memory": 33.6,
+        "overhead": 25.5
+      },
+      "memory_access_counts": {
+        "ld_global": 3,
+        "st_global": 1,
+        "ld_shared": 32,
+        "st_shared": 2,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 4,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 4
+        }
+      },
+      "l2_pressure_score": 4,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 8.5,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 6,
+        "setp_count": 11
+      },
+      "special_register_uses": 4,
+      "special_register_types": {
+        "%ctaid": 2,
+        "%tid": 2
+      },
+      "domain_scores": {
+        "AI_TRAINING": 48,
+        "AI_INFERENCE": 8,
+        "GRAPHICS_RENDERING": 9,
+        "IMAGE_PROCESSING": 17
+      },
+      "domains": [
+        "AI_TRAINING",
+        "IMAGE_PROCESSING",
+        "GRAPHICS_RENDERING",
+        "AI_INFERENCE"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "AI_TRAINING",
+          48
+        ],
+        [
+          "IMAGE_PROCESSING",
+          17
+        ],
+        [
+          "GRAPHICS_RENDERING",
+          9
+        ]
+      ],
+      "regex_domain": "AI_TRAINING",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 44,
+      "memory_ops": 38,
+      "arithmetic_intensity": 1.158,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00002_stride_loop_matmul_base.ptx",
+      "path": "../raw/00002_stride_loop_matmul_base.ptx",
+      "size_kb": 10.5,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z20matmul_stride_kernelPKfS0_Pfi"
+      ],
+      "total_virtual_regs": 268,
+      "max_vreg_per_kernel": 123,
+      "mean_vreg_per_kernel": 67.0,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 262,
+      "instruction_category_counts": {
+        "load_store": 89,
+        "conversion": 3,
+        "data_movement": 24,
+        "logic_shift": 26,
+        "integer_arith": 47,
+        "comparison": 17,
+        "control_flow": 22,
+        "synchronization": 2,
+        "float_arith": 32
+      },
+      "top20_opcodes": {
+        "ld.shared.f32": 64,
+        "add.s32": 38,
+        "fma.rn.ftz.f32": 32,
+        "mov.u32": 18,
+        "bra": 14,
+        "shl.b32": 9,
+        "bra.uni": 8,
+        "ld.global.nc.f32": 8,
+        "st.shared.f32": 8,
+        "setp.lt.s32": 7,
+        "setp.ge.s32": 7,
+        "mov.f32": 6,
+        "or.b32": 5,
+        "or.pred": 5,
+        "and.pred": 4,
+        "st.shared.u32": 4,
+        "ld.param.u64": 3,
+        "cvta.to.global.u64": 3,
+        "mul.wide.s32": 3,
+        "add.s64": 3
+      },
+      "unique_opcodes": 29,
+      "opcode_histogram": {
+        "ld.param.u64": 3,
+        "ld.param.u32": 1,
+        "cvta.to.global.u64": 3,
+        "mov.u32": 18,
+        "shl.b32": 9,
+        "add.s32": 38,
+        "shr.s32": 2,
+        "shr.u32": 1,
+        "or.b32": 5,
+        "mad.lo.s32": 2,
+        "mul.lo.s32": 1,
+        "setp.lt.s32": 7,
+        "mov.f32": 6,
+        "bra": 14,
+        "and.pred": 4,
+        "mul.wide.s32": 3,
+        "add.s64": 3,
+        "bra.uni": 8,
+        "ld.global.nc.f32": 8,
+        "st.shared.f32": 8,
+        "st.shared.u32": 4,
+        "setp.ge.s32": 7,
+        "or.pred": 5,
+        "setp.ne.s32": 1,
+        "bar.sync": 2,
+        "ld.shared.f32": 64,
+        "fma.rn.ftz.f32": 32,
+        "st.global.f32": 1,
+        "setp.lt.u32": 2
+      },
+      "precision_counts": {
+        "u64": 6,
+        "u32": 26,
+        "b32": 14,
+        "s32": 61,
+        "f32": 119,
+        "pred": 9,
+        "s64": 3
+      },
+      "precision_pct": {
+        "u64": 2.52,
+        "u32": 10.92,
+        "b32": 5.88,
+        "s32": 25.63,
+        "f32": 50.0,
+        "pred": 3.78,
+        "s64": 1.26
+      },
+      "functional_split": {
+        "compute": 96,
+        "memory": 89,
+        "overhead": 77
+      },
+      "functional_split_pct": {
+        "compute": 36.6,
+        "memory": 34.0,
+        "overhead": 29.4
+      },
+      "memory_access_counts": {
+        "ld_global": 8,
+        "st_global": 1,
+        "ld_shared": 64,
+        "st_shared": 12,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 3,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 3
+        }
+      },
+      "l2_pressure_score": 9,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 8.444,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 14,
+        "setp_count": 17
+      },
+      "special_register_uses": 4,
+      "special_register_types": {
+        "%ctaid": 2,
+        "%tid": 2
+      },
+      "domain_scores": {
+        "AI_TRAINING": 96,
+        "GRAPHICS_RENDERING": 9,
+        "HPC_STENCIL": 12
+      },
+      "domains": [
+        "AI_TRAINING",
+        "HPC_STENCIL",
+        "GRAPHICS_RENDERING"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "AI_TRAINING",
+          96
+        ],
+        [
+          "HPC_STENCIL",
+          12
+        ],
+        [
+          "GRAPHICS_RENDERING",
+          9
+        ]
+      ],
+      "regex_domain": "AI_TRAINING",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 79,
+      "memory_ops": 85,
+      "arithmetic_intensity": 0.929,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00003_stream_pipeline_base.ptx",
+      "path": "../raw/00003_stream_pipeline_base.ptx",
+      "size_kb": 8.33,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 2,
+      "kernel_names": [
+        "_Z17dense_relu_kernelPKfS0_S0_Pfiii",
+        "_Z19dense_linear_kernelPKfS0_S0_Pfiii"
+      ],
+      "total_virtual_regs": 215,
+      "max_vreg_per_kernel": 33,
+      "mean_vreg_per_kernel": 26.9,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 169,
+      "instruction_category_counts": {
+        "load_store": 38,
+        "conversion": 8,
+        "data_movement": 24,
+        "integer_arith": 59,
+        "comparison": 14,
+        "logic_shift": 4,
+        "control_flow": 12,
+        "float_arith": 10
+      },
+      "top20_opcodes": {
+        "ld.global.nc.f32": 22,
+        "add.s64": 20,
+        "mov.u32": 16,
+        "bra": 12,
+        "mul.wide.s32": 12,
+        "mad.lo.s32": 10,
+        "fma.rn.ftz.f32": 10,
+        "ld.param.u64": 8,
+        "cvta.to.global.u64": 8,
+        "add.s32": 8,
+        "ld.param.u32": 6,
+        "mov.f32": 6,
+        "setp.ge.s32": 4,
+        "mul.lo.s32": 4,
+        "setp.ne.s32": 4,
+        "or.pred": 2,
+        "setp.lt.s32": 2,
+        "and.b32": 2,
+        "setp.lt.u32": 2,
+        "sub.s32": 2
+      },
+      "unique_opcodes": 25,
+      "opcode_histogram": {
+        "ld.param.u64": 8,
+        "ld.param.u32": 6,
+        "cvta.to.global.u64": 8,
+        "mov.u32": 16,
+        "mad.lo.s32": 10,
+        "setp.ge.s32": 4,
+        "or.pred": 2,
+        "bra": 12,
+        "setp.lt.s32": 2,
+        "mov.f32": 6,
+        "add.s32": 8,
+        "and.b32": 2,
+        "setp.lt.u32": 2,
+        "sub.s32": 2,
+        "mul.lo.s32": 4,
+        "mul.wide.s32": 12,
+        "add.s64": 20,
+        "mov.u64": 2,
+        "ld.global.nc.f32": 22,
+        "fma.rn.ftz.f32": 10,
+        "setp.ne.s32": 4,
+        "setp.eq.s32": 2,
+        "add.ftz.f32": 2,
+        "max.ftz.f32": 1,
+        "st.global.f32": 2
+      },
+      "precision_counts": {
+        "u64": 18,
+        "u32": 24,
+        "s32": 48,
+        "pred": 2,
+        "f32": 43,
+        "b32": 2,
+        "s64": 20
+      },
+      "precision_pct": {
+        "u64": 11.46,
+        "u32": 15.29,
+        "s32": 30.57,
+        "pred": 1.27,
+        "f32": 27.39,
+        "b32": 1.27,
+        "s64": 12.74
+      },
+      "functional_split": {
+        "compute": 83,
+        "memory": 38,
+        "overhead": 48
+      },
+      "functional_split_pct": {
+        "compute": 49.1,
+        "memory": 22.5,
+        "overhead": 28.4
+      },
+      "memory_access_counts": {
+        "ld_global": 22,
+        "st_global": 2,
+        "ld_shared": 0,
+        "st_shared": 0,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 12,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 12
+        }
+      },
+      "l2_pressure_score": 24,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 0.0,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 12,
+        "setp_count": 14
+      },
+      "special_register_uses": 12,
+      "special_register_types": {
+        "%ntid": 4,
+        "%ctaid": 4,
+        "%tid": 4
+      },
+      "domain_scores": {
+        "AI_TRAINING": 34,
+        "GRAPHICS_RENDERING": 18,
+        "HPC_STENCIL": 22,
+        "IMAGE_PROCESSING": 10
+      },
+      "domains": [
+        "AI_TRAINING",
+        "HPC_STENCIL",
+        "GRAPHICS_RENDERING",
+        "IMAGE_PROCESSING"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "AI_TRAINING",
+          34
+        ],
+        [
+          "HPC_STENCIL",
+          22
+        ],
+        [
+          "GRAPHICS_RENDERING",
+          18
+        ]
+      ],
+      "regex_domain": "AI_TRAINING",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 69,
+      "memory_ops": 24,
+      "arithmetic_intensity": 2.875,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00003_tiled_coalesced_unroll_base.ptx",
+      "path": "../raw/00003_tiled_coalesced_unroll_base.ptx",
+      "size_kb": 7.81,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z19matmul_tiled_kernelPKfS0_Pfi"
+      ],
+      "total_virtual_regs": 181,
+      "max_vreg_per_kernel": 111,
+      "mean_vreg_per_kernel": 45.2,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 170,
+      "instruction_category_counts": {
+        "load_store": 73,
+        "data_movement": 12,
+        "logic_shift": 10,
+        "integer_arith": 25,
+        "comparison": 8,
+        "control_flow": 5,
+        "conversion": 3,
+        "synchronization": 2,
+        "float_arith": 32
+      },
+      "top20_opcodes": {
+        "ld.shared.f32": 64,
+        "fma.rn.ftz.f32": 32,
+        "add.s32": 14,
+        "mov.u32": 7,
+        "setp.ge.s32": 6,
+        "mov.f32": 5,
+        "bra": 5,
+        "shl.b32": 4,
+        "add.s64": 4,
+        "ld.param.u64": 3,
+        "mad.lo.s32": 3,
+        "cvta.to.global.u64": 3,
+        "mul.wide.s32": 3,
+        "or.pred": 3,
+        "setp.lt.s32": 2,
+        "shr.s32": 2,
+        "ld.global.nc.f32": 2,
+        "st.shared.f32": 2,
+        "bar.sync": 2,
+        "ld.param.u32": 1
+      },
+      "unique_opcodes": 23,
+      "opcode_histogram": {
+        "ld.param.u64": 3,
+        "ld.param.u32": 1,
+        "mov.u32": 7,
+        "shl.b32": 4,
+        "add.s32": 14,
+        "setp.lt.s32": 2,
+        "mov.f32": 5,
+        "bra": 5,
+        "mul.lo.s32": 1,
+        "mad.lo.s32": 3,
+        "cvta.to.global.u64": 3,
+        "mul.wide.s32": 3,
+        "add.s64": 4,
+        "shr.s32": 2,
+        "shr.u32": 1,
+        "setp.ge.s32": 6,
+        "or.pred": 3,
+        "ld.global.nc.f32": 2,
+        "st.shared.f32": 2,
+        "bar.sync": 2,
+        "ld.shared.f32": 64,
+        "fma.rn.ftz.f32": 32,
+        "st.global.f32": 1
+      },
+      "precision_counts": {
+        "u64": 6,
+        "u32": 9,
+        "b32": 4,
+        "s32": 31,
+        "f32": 106,
+        "s64": 4,
+        "pred": 3
+      },
+      "precision_pct": {
+        "u64": 3.68,
+        "u32": 5.52,
+        "b32": 2.45,
+        "s32": 19.02,
+        "f32": 65.03,
+        "s64": 2.45,
+        "pred": 1.84
+      },
+      "functional_split": {
+        "compute": 65,
+        "memory": 73,
+        "overhead": 32
+      },
+      "functional_split_pct": {
+        "compute": 38.2,
+        "memory": 42.9,
+        "overhead": 18.8
+      },
+      "memory_access_counts": {
+        "ld_global": 2,
+        "st_global": 1,
+        "ld_shared": 64,
+        "st_shared": 2,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 2,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "132": 1,
+          "4": 3
+        }
+      },
+      "l2_pressure_score": 3,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 22.0,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 5,
+        "setp_count": 8
+      },
+      "special_register_uses": 4,
+      "special_register_types": {
+        "%ctaid": 2,
+        "%tid": 2
+      },
+      "domain_scores": {
+        "AI_TRAINING": 96,
+        "GRAPHICS_RENDERING": 9
+      },
+      "domains": [
+        "AI_TRAINING",
+        "GRAPHICS_RENDERING"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "AI_TRAINING",
+          96
+        ],
+        [
+          "GRAPHICS_RENDERING",
+          9
+        ]
+      ],
+      "regex_domain": "AI_TRAINING",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 57,
+      "memory_ops": 69,
+      "arithmetic_intensity": 0.826,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00004_1_MLP_minimized_divergence_base.ptx",
+      "path": "../raw/00004_1_MLP_minimized_divergence_base.ptx",
+      "size_kb": 2.29,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z15relu_activationPfi"
+      ],
+      "total_virtual_regs": 17,
+      "max_vreg_per_kernel": 6,
+      "mean_vreg_per_kernel": 4.2,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 15,
+      "instruction_category_counts": {
+        "load_store": 4,
+        "data_movement": 4,
+        "integer_arith": 4,
+        "comparison": 1,
+        "control_flow": 1,
+        "conversion": 1
+      },
+      "top20_opcodes": {
+        "mov.u32": 3,
+        "ld.param.u64": 1,
+        "ld.param.u32": 1,
+        "mad.lo.s32": 1,
+        "setp.ge.s32": 1,
+        "bra": 1,
+        "cvta.to.global.u64": 1,
+        "mul.wide.s32": 1,
+        "add.s64": 1,
+        "ld.global.f32": 1,
+        "mov.f32": 1,
+        "max.ftz.f32": 1,
+        "st.global.f32": 1
+      },
+      "unique_opcodes": 13,
+      "opcode_histogram": {
+        "ld.param.u64": 1,
+        "ld.param.u32": 1,
+        "mov.u32": 3,
+        "mad.lo.s32": 1,
+        "setp.ge.s32": 1,
+        "bra": 1,
+        "cvta.to.global.u64": 1,
+        "mul.wide.s32": 1,
+        "add.s64": 1,
+        "ld.global.f32": 1,
+        "mov.f32": 1,
+        "max.ftz.f32": 1,
+        "st.global.f32": 1
+      },
+      "precision_counts": {
+        "u64": 2,
+        "u32": 4,
+        "s32": 3,
+        "s64": 1,
+        "f32": 4
+      },
+      "precision_pct": {
+        "u64": 14.29,
+        "u32": 28.57,
+        "s32": 21.43,
+        "s64": 7.14,
+        "f32": 28.57
+      },
+      "functional_split": {
+        "compute": 5,
+        "memory": 4,
+        "overhead": 6
+      },
+      "functional_split_pct": {
+        "compute": 33.3,
+        "memory": 26.7,
+        "overhead": 40.0
+      },
+      "memory_access_counts": {
+        "ld_global": 1,
+        "st_global": 1,
+        "ld_shared": 0,
+        "st_shared": 0,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 1,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 1
+        }
+      },
+      "l2_pressure_score": 2,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 0.0,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 1,
+        "setp_count": 1
+      },
+      "special_register_uses": 3,
+      "special_register_types": {
+        "%ctaid": 1,
+        "%ntid": 1,
+        "%tid": 1
+      },
+      "domain_scores": {},
+      "domains": [],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [],
+      "regex_domain": "UNKNOWN",
+      "llm_domain": "AI_TRAINING",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 4,
+      "memory_ops": 2,
+      "arithmetic_intensity": 2.0,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00004_unrolled_conv2d_relu_bias_base.ptx",
+      "path": "../raw/00004_unrolled_conv2d_relu_bias_base.ptx",
+      "size_kb": 7.53,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z32conv2d_relu_bias_kernel_unrolledPKfS0_S0_S0_Pfiiiiiiiii"
+      ],
+      "total_virtual_regs": 145,
+      "max_vreg_per_kernel": 57,
+      "mean_vreg_per_kernel": 36.2,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 125,
+      "instruction_category_counts": {
+        "load_store": 31,
+        "conversion": 7,
+        "data_movement": 11,
+        "integer_arith": 45,
+        "comparison": 11,
+        "control_flow": 11,
+        "logic_shift": 2,
+        "float_arith": 7
+      },
+      "top20_opcodes": {
+        "ld.global.nc.f32": 16,
+        "bra": 11,
+        "add.s32": 11,
+        "ld.param.u32": 9,
+        "mov.u32": 9,
+        "add.s64": 9,
+        "mul.lo.s32": 7,
+        "fma.rn.ftz.f32": 7,
+        "mul.wide.s32": 6,
+        "ld.param.u64": 5,
+        "cvta.to.global.u64": 5,
+        "setp.lt.s32": 5,
+        "mad.lo.s32": 3,
+        "div.s32": 3,
+        "rem.s32": 3,
+        "setp.eq.s32": 3,
+        "setp.ge.s32": 1,
+        "cvt.s64.s32": 1,
+        "and.b32": 1,
+        "sub.s32": 1
+      },
+      "unique_opcodes": 29,
+      "opcode_histogram": {
+        "ld.param.u64": 5,
+        "ld.param.u32": 9,
+        "cvta.to.global.u64": 5,
+        "mov.u32": 9,
+        "mad.lo.s32": 3,
+        "mul.lo.s32": 7,
+        "setp.ge.s32": 1,
+        "bra": 11,
+        "div.s32": 3,
+        "rem.s32": 3,
+        "cvt.s64.s32": 1,
+        "mul.wide.s32": 6,
+        "add.s64": 9,
+        "ld.global.nc.f32": 16,
+        "setp.lt.s32": 5,
+        "add.s32": 11,
+        "and.b32": 1,
+        "sub.s32": 1,
+        "cvt.u32.u64": 1,
+        "setp.lt.u32": 1,
+        "mov.u64": 1,
+        "fma.rn.ftz.f32": 7,
+        "setp.ne.s32": 1,
+        "setp.eq.s32": 3,
+        "shl.b64": 1,
+        "mov.f32": 1,
+        "max.ftz.f32": 1,
+        "add.ftz.f32": 1,
+        "st.global.f32": 1
+      },
+      "precision_counts": {
+        "u64": 11,
+        "u32": 20,
+        "s32": 45,
+        "s64": 9,
+        "f32": 27,
+        "b32": 1,
+        "b64": 1
+      },
+      "precision_pct": {
+        "u64": 9.65,
+        "u32": 17.54,
+        "s32": 39.47,
+        "s64": 7.89,
+        "f32": 23.68,
+        "b32": 0.88,
+        "b64": 0.88
+      },
+      "functional_split": {
+        "compute": 63,
+        "memory": 31,
+        "overhead": 31
+      },
+      "functional_split_pct": {
+        "compute": 50.4,
+        "memory": 24.8,
+        "overhead": 24.8
+      },
+      "memory_access_counts": {
+        "ld_global": 16,
+        "st_global": 1,
+        "ld_shared": 0,
+        "st_shared": 0,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 6,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 6
+        }
+      },
+      "l2_pressure_score": 17,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 0.0,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 11,
+        "setp_count": 11
+      },
+      "special_register_uses": 3,
+      "special_register_types": {
+        "%ntid": 1,
+        "%ctaid": 1,
+        "%tid": 1
+      },
+      "domain_scores": {
+        "AI_TRAINING": 25,
+        "HPC_STENCIL": 16
+      },
+      "domains": [
+        "AI_TRAINING",
+        "HPC_STENCIL"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "AI_TRAINING",
+          25
+        ],
+        [
+          "HPC_STENCIL",
+          16
+        ]
+      ],
+      "regex_domain": "AI_TRAINING",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 52,
+      "memory_ops": 17,
+      "arithmetic_intensity": 3.059,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00005_1_MLP_optimized_block_size_base.ptx",
+      "path": "../raw/00005_1_MLP_optimized_block_size_base.ptx",
+      "size_kb": 2.29,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z15relu_activationPfi"
+      ],
+      "total_virtual_regs": 17,
+      "max_vreg_per_kernel": 6,
+      "mean_vreg_per_kernel": 4.2,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 15,
+      "instruction_category_counts": {
+        "load_store": 4,
+        "data_movement": 4,
+        "integer_arith": 4,
+        "comparison": 1,
+        "control_flow": 1,
+        "conversion": 1
+      },
+      "top20_opcodes": {
+        "mov.u32": 3,
+        "ld.param.u64": 1,
+        "ld.param.u32": 1,
+        "mad.lo.s32": 1,
+        "setp.ge.s32": 1,
+        "bra": 1,
+        "cvta.to.global.u64": 1,
+        "mul.wide.s32": 1,
+        "add.s64": 1,
+        "ld.global.f32": 1,
+        "mov.f32": 1,
+        "max.ftz.f32": 1,
+        "st.global.f32": 1
+      },
+      "unique_opcodes": 13,
+      "opcode_histogram": {
+        "ld.param.u64": 1,
+        "ld.param.u32": 1,
+        "mov.u32": 3,
+        "mad.lo.s32": 1,
+        "setp.ge.s32": 1,
+        "bra": 1,
+        "cvta.to.global.u64": 1,
+        "mul.wide.s32": 1,
+        "add.s64": 1,
+        "ld.global.f32": 1,
+        "mov.f32": 1,
+        "max.ftz.f32": 1,
+        "st.global.f32": 1
+      },
+      "precision_counts": {
+        "u64": 2,
+        "u32": 4,
+        "s32": 3,
+        "s64": 1,
+        "f32": 4
+      },
+      "precision_pct": {
+        "u64": 14.29,
+        "u32": 28.57,
+        "s32": 21.43,
+        "s64": 7.14,
+        "f32": 28.57
+      },
+      "functional_split": {
+        "compute": 5,
+        "memory": 4,
+        "overhead": 6
+      },
+      "functional_split_pct": {
+        "compute": 33.3,
+        "memory": 26.7,
+        "overhead": 40.0
+      },
+      "memory_access_counts": {
+        "ld_global": 1,
+        "st_global": 1,
+        "ld_shared": 0,
+        "st_shared": 0,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 1,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 1
+        }
+      },
+      "l2_pressure_score": 2,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 0.0,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 1,
+        "setp_count": 1
+      },
+      "special_register_uses": 3,
+      "special_register_types": {
+        "%ctaid": 1,
+        "%ntid": 1,
+        "%tid": 1
+      },
+      "domain_scores": {},
+      "domains": [],
+      "primary_domain": "AI_INFERENCE",
+      "top3_domains": [],
+      "regex_domain": "UNKNOWN",
+      "llm_domain": "AI_INFERENCE",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 4,
+      "memory_ops": 2,
+      "arithmetic_intensity": 2.0,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00006_aligned_vectorized_matmul_base_base.ptx",
+      "path": "../raw/00006_aligned_vectorized_matmul_base_base.ptx",
+      "size_kb": 9.72,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z19matmul_tiled_kernelPKfS0_Pfi"
+      ],
+      "total_virtual_regs": 223,
+      "max_vreg_per_kernel": 121,
+      "mean_vreg_per_kernel": 55.8,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 225,
+      "instruction_category_counts": {
+        "load_store": 85,
+        "data_movement": 12,
+        "logic_shift": 21,
+        "integer_arith": 33,
+        "comparison": 18,
+        "control_flow": 21,
+        "synchronization": 2,
+        "float_arith": 32,
+        "conversion": 1
+      },
+      "top20_opcodes": {
+        "ld.shared.f32": 64,
+        "fma.rn.ftz.f32": 32,
+        "add.s32": 19,
+        "bra": 13,
+        "mov.u32": 10,
+        "st.shared.f32": 10,
+        "setp.lt.s32": 8,
+        "bra.uni": 8,
+        "add.s64": 6,
+        "shr.s32": 6,
+        "setp.gt.s32": 6,
+        "shl.b32": 5,
+        "mul.wide.s32": 5,
+        "and.pred": 4,
+        "ld.param.u64": 3,
+        "mad.lo.s32": 3,
+        "shr.u32": 3,
+        "mov.f32": 2,
+        "and.b32": 2,
+        "setp.eq.s32": 2
+      },
+      "unique_opcodes": 29,
+      "opcode_histogram": {
+        "ld.param.u64": 3,
+        "ld.param.u32": 1,
+        "mov.u32": 10,
+        "shl.b32": 5,
+        "add.s32": 19,
+        "setp.lt.s32": 8,
+        "mov.f32": 2,
+        "bra": 13,
+        "and.b32": 2,
+        "setp.eq.s32": 2,
+        "and.pred": 4,
+        "mad.lo.s32": 3,
+        "mul.wide.s32": 5,
+        "add.s64": 6,
+        "shr.s32": 6,
+        "shr.u32": 3,
+        "bra.uni": 8,
+        "setp.gt.s32": 6,
+        "ld.global.nc.v4.f32": 2,
+        "st.shared.f32": 10,
+        "st.shared.u32": 2,
+        "ld.global.nc.f32": 2,
+        "bar.sync": 2,
+        "ld.shared.f32": 64,
+        "fma.rn.ftz.f32": 32,
+        "setp.ge.s32": 2,
+        "or.pred": 1,
+        "cvta.to.global.u64": 1,
+        "st.global.f32": 1
+      },
+      "precision_counts": {
+        "u64": 4,
+        "u32": 16,
+        "b32": 7,
+        "s32": 51,
+        "f32": 113,
+        "pred": 5,
+        "s64": 6
+      },
+      "precision_pct": {
+        "u64": 1.98,
+        "u32": 7.92,
+        "b32": 3.47,
+        "s32": 25.25,
+        "f32": 55.94,
+        "pred": 2.48,
+        "s64": 2.97
+      },
+      "functional_split": {
+        "compute": 83,
+        "memory": 85,
+        "overhead": 57
+      },
+      "functional_split_pct": {
+        "compute": 36.9,
+        "memory": 37.8,
+        "overhead": 25.3
+      },
+      "memory_access_counts": {
+        "ld_global": 4,
+        "st_global": 1,
+        "ld_shared": 64,
+        "st_shared": 12,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 2,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 4,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 3,
+          "16": 2
+        }
+      },
+      "l2_pressure_score": 5,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 15.2,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 13,
+        "setp_count": 18
+      },
+      "special_register_uses": 4,
+      "special_register_types": {
+        "%ctaid": 2,
+        "%tid": 2
+      },
+      "domain_scores": {
+        "AI_TRAINING": 96,
+        "GRAPHICS_RENDERING": 9,
+        "HPC_STENCIL": 8
+      },
+      "domains": [
+        "AI_TRAINING",
+        "GRAPHICS_RENDERING",
+        "HPC_STENCIL"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "AI_TRAINING",
+          96
+        ],
+        [
+          "GRAPHICS_RENDERING",
+          9
+        ],
+        [
+          "HPC_STENCIL",
+          8
+        ]
+      ],
+      "regex_domain": "AI_TRAINING",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 65,
+      "memory_ops": 81,
+      "arithmetic_intensity": 0.802,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00007_dense_nosync_fused_base.ptx",
+      "path": "../raw/00007_dense_nosync_fused_base.ptx",
+      "size_kb": 5.22,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z19dense_nosync_kernelPKfS0_S0_Pfiiib"
+      ],
+      "total_virtual_regs": 113,
+      "max_vreg_per_kernel": 33,
+      "mean_vreg_per_kernel": 22.6,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 89,
+      "instruction_category_counts": {
+        "load_store": 20,
+        "conversion": 4,
+        "data_movement": 12,
+        "integer_arith": 29,
+        "comparison": 10,
+        "logic_shift": 3,
+        "control_flow": 6,
+        "float_arith": 5
+      },
+      "top20_opcodes": {
+        "ld.global.nc.f32": 11,
+        "add.s64": 10,
+        "mov.u32": 8,
+        "bra": 6,
+        "mul.wide.s32": 6,
+        "mad.lo.s32": 5,
+        "fma.rn.ftz.f32": 5,
+        "ld.param.u64": 4,
+        "cvta.to.global.u64": 4,
+        "add.s32": 4,
+        "ld.param.u32": 3,
+        "mov.f32": 3,
+        "setp.ge.s32": 2,
+        "or.pred": 2,
+        "mul.lo.s32": 2,
+        "setp.ne.s32": 2,
+        "ld.param.u8": 1,
+        "setp.lt.s32": 1,
+        "and.b32": 1,
+        "setp.lt.u32": 1
+      },
+      "unique_opcodes": 28,
+      "opcode_histogram": {
+        "ld.param.u8": 1,
+        "ld.param.u64": 4,
+        "ld.param.u32": 3,
+        "cvta.to.global.u64": 4,
+        "mov.u32": 8,
+        "mad.lo.s32": 5,
+        "setp.ge.s32": 2,
+        "or.pred": 2,
+        "bra": 6,
+        "setp.lt.s32": 1,
+        "mov.f32": 3,
+        "add.s32": 4,
+        "and.b32": 1,
+        "setp.lt.u32": 1,
+        "sub.s32": 1,
+        "mul.lo.s32": 2,
+        "mul.wide.s32": 6,
+        "add.s64": 10,
+        "mov.u64": 1,
+        "ld.global.nc.f32": 11,
+        "fma.rn.ftz.f32": 5,
+        "setp.ne.s32": 2,
+        "setp.eq.s32": 1,
+        "add.ftz.f32": 1,
+        "setp.gt.ftz.f32": 1,
+        "setp.eq.s16": 1,
+        "selp.f32": 1,
+        "st.global.f32": 1
+      },
+      "precision_counts": {
+        "u8": 1,
+        "u64": 9,
+        "u32": 12,
+        "s32": 24,
+        "pred": 2,
+        "f32": 23,
+        "b32": 1,
+        "s64": 10,
+        "s16": 1
+      },
+      "precision_pct": {
+        "u8": 1.2,
+        "u64": 10.84,
+        "u32": 14.46,
+        "s32": 28.92,
+        "pred": 2.41,
+        "f32": 27.71,
+        "b32": 1.2,
+        "s64": 12.05,
+        "s16": 1.2
+      },
+      "functional_split": {
+        "compute": 44,
+        "memory": 20,
+        "overhead": 25
+      },
+      "functional_split_pct": {
+        "compute": 49.4,
+        "memory": 22.5,
+        "overhead": 28.1
+      },
+      "memory_access_counts": {
+        "ld_global": 11,
+        "st_global": 1,
+        "ld_shared": 0,
+        "st_shared": 0,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 6,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 6
+        }
+      },
+      "l2_pressure_score": 12,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 0.0,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 6,
+        "setp_count": 9
+      },
+      "special_register_uses": 6,
+      "special_register_types": {
+        "%ntid": 2,
+        "%ctaid": 2,
+        "%tid": 2
+      },
+      "domain_scores": {
+        "AI_TRAINING": 15,
+        "AI_INFERENCE": 8,
+        "GRAPHICS_RENDERING": 9,
+        "HPC_STENCIL": 11,
+        "IMAGE_PROCESSING": 17
+      },
+      "domains": [
+        "IMAGE_PROCESSING",
+        "AI_TRAINING",
+        "HPC_STENCIL",
+        "GRAPHICS_RENDERING",
+        "AI_INFERENCE"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "IMAGE_PROCESSING",
+          17
+        ],
+        [
+          "AI_TRAINING",
+          15
+        ],
+        [
+          "HPC_STENCIL",
+          11
+        ]
+      ],
+      "regex_domain": "IMAGE_PROCESSING",
+      "llm_domain": "AI_TRAINING",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 34,
+      "memory_ops": 12,
+      "arithmetic_intensity": 2.833,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00008_shared_memory_reuse_optimization_base_base.ptx",
+      "path": "../raw/00008_shared_memory_reuse_optimization_base_base.ptx",
+      "size_kb": 8.09,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z27matmul_shared_memory_kernelPKfS0_Pfi"
+      ],
+      "total_virtual_regs": 181,
+      "max_vreg_per_kernel": 111,
+      "mean_vreg_per_kernel": 45.2,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 170,
+      "instruction_category_counts": {
+        "load_store": 73,
+        "data_movement": 12,
+        "logic_shift": 11,
+        "integer_arith": 24,
+        "comparison": 8,
+        "control_flow": 5,
+        "conversion": 3,
+        "synchronization": 2,
+        "float_arith": 32
+      },
+      "top20_opcodes": {
+        "ld.shared.f32": 64,
+        "fma.rn.ftz.f32": 32,
+        "add.s32": 14,
+        "mov.u32": 7,
+        "setp.ge.s32": 6,
+        "shl.b32": 5,
+        "mov.f32": 5,
+        "bra": 5,
+        "add.s64": 4,
+        "ld.param.u64": 3,
+        "mad.lo.s32": 3,
+        "cvta.to.global.u64": 3,
+        "mul.wide.s32": 3,
+        "or.pred": 3,
+        "setp.lt.s32": 2,
+        "shr.s32": 2,
+        "ld.global.nc.f32": 2,
+        "st.shared.f32": 2,
+        "bar.sync": 2,
+        "ld.param.u32": 1
+      },
+      "unique_opcodes": 22,
+      "opcode_histogram": {
+        "ld.param.u64": 3,
+        "ld.param.u32": 1,
+        "mov.u32": 7,
+        "shl.b32": 5,
+        "add.s32": 14,
+        "setp.lt.s32": 2,
+        "mov.f32": 5,
+        "bra": 5,
+        "mad.lo.s32": 3,
+        "cvta.to.global.u64": 3,
+        "mul.wide.s32": 3,
+        "add.s64": 4,
+        "shr.s32": 2,
+        "shr.u32": 1,
+        "setp.ge.s32": 6,
+        "or.pred": 3,
+        "ld.global.nc.f32": 2,
+        "st.shared.f32": 2,
+        "bar.sync": 2,
+        "ld.shared.f32": 64,
+        "fma.rn.ftz.f32": 32,
+        "st.global.f32": 1
+      },
+      "precision_counts": {
+        "u64": 6,
+        "u32": 9,
+        "b32": 5,
+        "s32": 30,
+        "f32": 106,
+        "s64": 4,
+        "pred": 3
+      },
+      "precision_pct": {
+        "u64": 3.68,
+        "u32": 5.52,
+        "b32": 3.07,
+        "s32": 18.4,
+        "f32": 65.03,
+        "s64": 2.45,
+        "pred": 1.84
+      },
+      "functional_split": {
+        "compute": 64,
+        "memory": 73,
+        "overhead": 33
+      },
+      "functional_split_pct": {
+        "compute": 37.6,
+        "memory": 42.9,
+        "overhead": 19.4
+      },
+      "memory_access_counts": {
+        "ld_global": 2,
+        "st_global": 1,
+        "ld_shared": 64,
+        "st_shared": 2,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 2,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 3
+        }
+      },
+      "l2_pressure_score": 3,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 22.0,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 5,
+        "setp_count": 8
+      },
+      "special_register_uses": 4,
+      "special_register_types": {
+        "%ctaid": 2,
+        "%tid": 2
+      },
+      "domain_scores": {
+        "AI_TRAINING": 96,
+        "GRAPHICS_RENDERING": 9
+      },
+      "domains": [
+        "AI_TRAINING",
+        "GRAPHICS_RENDERING"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "AI_TRAINING",
+          96
+        ],
+        [
+          "GRAPHICS_RENDERING",
+          9
+        ]
+      ],
+      "regex_domain": "AI_TRAINING",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 56,
+      "memory_ops": 69,
+      "arithmetic_intensity": 0.812,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00009_efficient_thread_block_mapping_base_base.ptx",
+      "path": "../raw/00009_efficient_thread_block_mapping_base_base.ptx",
+      "size_kb": 8.0,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z23matmul_optimized_kernelPKfS0_Pfi"
+      ],
+      "total_virtual_regs": 180,
+      "max_vreg_per_kernel": 111,
+      "mean_vreg_per_kernel": 45.0,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 169,
+      "instruction_category_counts": {
+        "load_store": 73,
+        "data_movement": 14,
+        "integer_arith": 23,
+        "comparison": 8,
+        "control_flow": 5,
+        "logic_shift": 9,
+        "conversion": 3,
+        "synchronization": 2,
+        "float_arith": 32
+      },
+      "top20_opcodes": {
+        "ld.shared.f32": 64,
+        "fma.rn.ftz.f32": 32,
+        "add.s32": 11,
+        "mov.u32": 9,
+        "setp.ge.s32": 6,
+        "mad.lo.s32": 5,
+        "mov.f32": 5,
+        "bra": 5,
+        "add.s64": 4,
+        "ld.param.u64": 3,
+        "shl.b32": 3,
+        "cvta.to.global.u64": 3,
+        "mul.wide.s32": 3,
+        "or.pred": 3,
+        "setp.lt.s32": 2,
+        "shr.s32": 2,
+        "ld.global.nc.f32": 2,
+        "st.shared.f32": 2,
+        "bar.sync": 2,
+        "ld.param.u32": 1
+      },
+      "unique_opcodes": 22,
+      "opcode_histogram": {
+        "ld.param.u64": 3,
+        "ld.param.u32": 1,
+        "mov.u32": 9,
+        "mad.lo.s32": 5,
+        "setp.lt.s32": 2,
+        "mov.f32": 5,
+        "bra": 5,
+        "shl.b32": 3,
+        "add.s32": 11,
+        "cvta.to.global.u64": 3,
+        "mul.wide.s32": 3,
+        "add.s64": 4,
+        "shr.s32": 2,
+        "shr.u32": 1,
+        "setp.ge.s32": 6,
+        "or.pred": 3,
+        "ld.global.nc.f32": 2,
+        "st.shared.f32": 2,
+        "bar.sync": 2,
+        "ld.shared.f32": 64,
+        "fma.rn.ftz.f32": 32,
+        "st.global.f32": 1
+      },
+      "precision_counts": {
+        "u64": 6,
+        "u32": 11,
+        "s32": 29,
+        "f32": 106,
+        "b32": 3,
+        "s64": 4,
+        "pred": 3
+      },
+      "precision_pct": {
+        "u64": 3.7,
+        "u32": 6.79,
+        "s32": 17.9,
+        "f32": 65.43,
+        "b32": 1.85,
+        "s64": 2.47,
+        "pred": 1.85
+      },
+      "functional_split": {
+        "compute": 63,
+        "memory": 73,
+        "overhead": 33
+      },
+      "functional_split_pct": {
+        "compute": 37.3,
+        "memory": 43.2,
+        "overhead": 19.5
+      },
+      "memory_access_counts": {
+        "ld_global": 2,
+        "st_global": 1,
+        "ld_shared": 64,
+        "st_shared": 2,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 2,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 3
+        }
+      },
+      "l2_pressure_score": 3,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 22.0,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 5,
+        "setp_count": 8
+      },
+      "special_register_uses": 6,
+      "special_register_types": {
+        "%ntid": 2,
+        "%ctaid": 2,
+        "%tid": 2
+      },
+      "domain_scores": {
+        "AI_TRAINING": 96,
+        "GRAPHICS_RENDERING": 9
+      },
+      "domains": [
+        "AI_TRAINING",
+        "GRAPHICS_RENDERING"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "AI_TRAINING",
+          96
+        ],
+        [
+          "GRAPHICS_RENDERING",
+          9
+        ]
+      ],
+      "regex_domain": "AI_TRAINING",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 55,
+      "memory_ops": 69,
+      "arithmetic_intensity": 0.797,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00009_strided_conv2d_relu_bias_base.ptx",
+      "path": "../raw/00009_strided_conv2d_relu_bias_base.ptx",
+      "size_kb": 7.62,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z31conv2d_relu_bias_kernel_stridedPKfS0_S0_S0_Pfiiiiiiiii"
+      ],
+      "total_virtual_regs": 151,
+      "max_vreg_per_kernel": 62,
+      "mean_vreg_per_kernel": 37.8,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 130,
+      "instruction_category_counts": {
+        "load_store": 31,
+        "conversion": 7,
+        "integer_arith": 47,
+        "data_movement": 12,
+        "comparison": 12,
+        "control_flow": 12,
+        "logic_shift": 2,
+        "float_arith": 7
+      },
+      "top20_opcodes": {
+        "ld.global.nc.f32": 16,
+        "bra": 12,
+        "add.s32": 12,
+        "mov.u32": 10,
+        "ld.param.u32": 9,
+        "add.s64": 9,
+        "mul.lo.s32": 8,
+        "fma.rn.ftz.f32": 7,
+        "mul.wide.s32": 6,
+        "setp.lt.s32": 6,
+        "ld.param.u64": 5,
+        "cvta.to.global.u64": 5,
+        "mad.lo.s32": 3,
+        "div.s32": 3,
+        "rem.s32": 3,
+        "setp.eq.s32": 3,
+        "setp.ge.s32": 1,
+        "and.b32": 1,
+        "sub.s32": 1,
+        "cvt.s64.s32": 1
+      },
+      "unique_opcodes": 29,
+      "opcode_histogram": {
+        "ld.param.u64": 5,
+        "ld.param.u32": 9,
+        "cvta.to.global.u64": 5,
+        "mul.lo.s32": 8,
+        "mov.u32": 10,
+        "mad.lo.s32": 3,
+        "setp.ge.s32": 1,
+        "bra": 12,
+        "add.s32": 12,
+        "and.b32": 1,
+        "sub.s32": 1,
+        "div.s32": 3,
+        "rem.s32": 3,
+        "cvt.s64.s32": 1,
+        "mul.wide.s32": 6,
+        "add.s64": 9,
+        "ld.global.nc.f32": 16,
+        "setp.lt.s32": 6,
+        "cvt.u32.u64": 1,
+        "setp.lt.u32": 1,
+        "mov.u64": 1,
+        "fma.rn.ftz.f32": 7,
+        "setp.ne.s32": 1,
+        "setp.eq.s32": 3,
+        "shl.b64": 1,
+        "mov.f32": 1,
+        "max.ftz.f32": 1,
+        "add.ftz.f32": 1,
+        "st.global.f32": 1
+      },
+      "precision_counts": {
+        "u64": 11,
+        "u32": 21,
+        "s32": 48,
+        "b32": 1,
+        "s64": 9,
+        "f32": 27,
+        "b64": 1
+      },
+      "precision_pct": {
+        "u64": 9.32,
+        "u32": 17.8,
+        "s32": 40.68,
+        "b32": 0.85,
+        "s64": 7.63,
+        "f32": 22.88,
+        "b64": 0.85
+      },
+      "functional_split": {
+        "compute": 66,
+        "memory": 31,
+        "overhead": 33
+      },
+      "functional_split_pct": {
+        "compute": 50.8,
+        "memory": 23.8,
+        "overhead": 25.4
+      },
+      "memory_access_counts": {
+        "ld_global": 16,
+        "st_global": 1,
+        "ld_shared": 0,
+        "st_shared": 0,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 6,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 6
+        }
+      },
+      "l2_pressure_score": 17,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 0.0,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 12,
+        "setp_count": 12
+      },
+      "special_register_uses": 4,
+      "special_register_types": {
+        "%ntid": 1,
+        "%ctaid": 1,
+        "%tid": 1,
+        "%nctaid": 1
+      },
+      "domain_scores": {
+        "AI_TRAINING": 25,
+        "HPC_STENCIL": 16
+      },
+      "domains": [
+        "AI_TRAINING",
+        "HPC_STENCIL"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "AI_TRAINING",
+          25
+        ],
+        [
+          "HPC_STENCIL",
+          16
+        ]
+      ],
+      "regex_domain": "AI_TRAINING",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 54,
+      "memory_ops": 17,
+      "arithmetic_intensity": 3.176,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00010_streamed_conv2d_relu_bias_base.ptx",
+      "path": "../raw/00010_streamed_conv2d_relu_bias_base.ptx",
+      "size_kb": 7.78,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z32conv2d_relu_bias_kernel_streamedPKfS0_S0_S0_Pfiiiiiiiiiii"
+      ],
+      "total_virtual_regs": 144,
+      "max_vreg_per_kernel": 56,
+      "mean_vreg_per_kernel": 36.0,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 124,
+      "instruction_category_counts": {
+        "load_store": 32,
+        "conversion": 7,
+        "data_movement": 11,
+        "integer_arith": 43,
+        "comparison": 11,
+        "control_flow": 11,
+        "logic_shift": 2,
+        "float_arith": 7
+      },
+      "top20_opcodes": {
+        "ld.global.nc.f32": 16,
+        "add.s32": 12,
+        "bra": 11,
+        "ld.param.u32": 10,
+        "mov.u32": 9,
+        "add.s64": 9,
+        "fma.rn.ftz.f32": 7,
+        "mul.wide.s32": 6,
+        "ld.param.u64": 5,
+        "cvta.to.global.u64": 5,
+        "setp.lt.s32": 5,
+        "mul.lo.s32": 4,
+        "mad.lo.s32": 3,
+        "div.s32": 3,
+        "rem.s32": 3,
+        "setp.eq.s32": 3,
+        "setp.ge.s32": 1,
+        "cvt.s64.s32": 1,
+        "and.b32": 1,
+        "sub.s32": 1
+      },
+      "unique_opcodes": 29,
+      "opcode_histogram": {
+        "ld.param.u64": 5,
+        "ld.param.u32": 10,
+        "cvta.to.global.u64": 5,
+        "mov.u32": 9,
+        "mad.lo.s32": 3,
+        "setp.ge.s32": 1,
+        "bra": 11,
+        "add.s32": 12,
+        "div.s32": 3,
+        "rem.s32": 3,
+        "cvt.s64.s32": 1,
+        "mul.wide.s32": 6,
+        "add.s64": 9,
+        "ld.global.nc.f32": 16,
+        "setp.lt.s32": 5,
+        "and.b32": 1,
+        "sub.s32": 1,
+        "cvt.u32.u64": 1,
+        "mul.lo.s32": 4,
+        "setp.lt.u32": 1,
+        "mov.u64": 1,
+        "fma.rn.ftz.f32": 7,
+        "setp.ne.s32": 1,
+        "setp.eq.s32": 3,
+        "shl.b64": 1,
+        "mov.f32": 1,
+        "max.ftz.f32": 1,
+        "add.ftz.f32": 1,
+        "st.global.f32": 1
+      },
+      "precision_counts": {
+        "u64": 11,
+        "u32": 21,
+        "s32": 43,
+        "s64": 9,
+        "f32": 27,
+        "b32": 1,
+        "b64": 1
+      },
+      "precision_pct": {
+        "u64": 9.73,
+        "u32": 18.58,
+        "s32": 38.05,
+        "s64": 7.96,
+        "f32": 23.89,
+        "b32": 0.88,
+        "b64": 0.88
+      },
+      "functional_split": {
+        "compute": 61,
+        "memory": 32,
+        "overhead": 31
+      },
+      "functional_split_pct": {
+        "compute": 49.2,
+        "memory": 25.8,
+        "overhead": 25.0
+      },
+      "memory_access_counts": {
+        "ld_global": 16,
+        "st_global": 1,
+        "ld_shared": 0,
+        "st_shared": 0,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 6,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 6
+        }
+      },
+      "l2_pressure_score": 17,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 0.0,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 11,
+        "setp_count": 11
+      },
+      "special_register_uses": 3,
+      "special_register_types": {
+        "%ntid": 1,
+        "%ctaid": 1,
+        "%tid": 1
+      },
+      "domain_scores": {
+        "AI_TRAINING": 25,
+        "HPC_STENCIL": 16
+      },
+      "domains": [
+        "AI_TRAINING",
+        "HPC_STENCIL"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "AI_TRAINING",
+          25
+        ],
+        [
+          "HPC_STENCIL",
+          16
+        ]
+      ],
+      "regex_domain": "AI_TRAINING",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 50,
+      "memory_ops": 17,
+      "arithmetic_intensity": 2.941,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00010_workload_balancing_optimization_base.ptx",
+      "path": "../raw/00010_workload_balancing_optimization_base.ptx",
+      "size_kb": 7.9,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z22matmul_balanced_kernelPKfS0_Pfi"
+      ],
+      "total_virtual_regs": 177,
+      "max_vreg_per_kernel": 111,
+      "mean_vreg_per_kernel": 44.2,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 168,
+      "instruction_category_counts": {
+        "load_store": 73,
+        "data_movement": 12,
+        "logic_shift": 9,
+        "integer_arith": 24,
+        "comparison": 6,
+        "control_flow": 7,
+        "conversion": 3,
+        "synchronization": 2,
+        "float_arith": 32
+      },
+      "top20_opcodes": {
+        "ld.shared.f32": 64,
+        "fma.rn.ftz.f32": 32,
+        "add.s32": 14,
+        "mov.u32": 7,
+        "shl.b32": 5,
+        "bra": 5,
+        "mov.f32": 5,
+        "setp.ge.s32": 4,
+        "add.s64": 4,
+        "ld.param.u64": 3,
+        "mad.lo.s32": 3,
+        "cvta.to.global.u64": 3,
+        "mul.wide.s32": 3,
+        "bra.uni": 2,
+        "shr.s32": 2,
+        "ld.global.nc.f32": 2,
+        "st.shared.f32": 2,
+        "bar.sync": 2,
+        "ld.param.u32": 1,
+        "or.pred": 1
+      },
+      "unique_opcodes": 24,
+      "opcode_histogram": {
+        "ld.param.u64": 3,
+        "ld.param.u32": 1,
+        "mov.u32": 7,
+        "shl.b32": 5,
+        "add.s32": 14,
+        "setp.ge.s32": 4,
+        "or.pred": 1,
+        "bra": 5,
+        "setp.gt.s32": 1,
+        "bra.uni": 2,
+        "mad.lo.s32": 3,
+        "cvta.to.global.u64": 3,
+        "mul.wide.s32": 3,
+        "add.s64": 4,
+        "shr.s32": 2,
+        "shr.u32": 1,
+        "mov.f32": 5,
+        "ld.global.nc.f32": 2,
+        "st.shared.f32": 2,
+        "bar.sync": 2,
+        "ld.shared.f32": 64,
+        "fma.rn.ftz.f32": 32,
+        "setp.lt.s32": 1,
+        "st.global.f32": 1
+      },
+      "precision_counts": {
+        "u64": 6,
+        "u32": 9,
+        "b32": 5,
+        "s32": 28,
+        "pred": 1,
+        "s64": 4,
+        "f32": 106
+      },
+      "precision_pct": {
+        "u64": 3.77,
+        "u32": 5.66,
+        "b32": 3.14,
+        "s32": 17.61,
+        "pred": 0.63,
+        "s64": 2.52,
+        "f32": 66.67
+      },
+      "functional_split": {
+        "compute": 62,
+        "memory": 73,
+        "overhead": 33
+      },
+      "functional_split_pct": {
+        "compute": 36.9,
+        "memory": 43.5,
+        "overhead": 19.6
+      },
+      "memory_access_counts": {
+        "ld_global": 2,
+        "st_global": 1,
+        "ld_shared": 64,
+        "st_shared": 2,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 3,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 3
+        }
+      },
+      "l2_pressure_score": 3,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 22.0,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 5,
+        "setp_count": 6
+      },
+      "special_register_uses": 4,
+      "special_register_types": {
+        "%ctaid": 2,
+        "%tid": 2
+      },
+      "domain_scores": {
+        "AI_TRAINING": 96,
+        "GRAPHICS_RENDERING": 9
+      },
+      "domains": [
+        "AI_TRAINING",
+        "GRAPHICS_RENDERING"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "AI_TRAINING",
+          96
+        ],
+        [
+          "GRAPHICS_RENDERING",
+          9
+        ]
+      ],
+      "regex_domain": "AI_TRAINING",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 56,
+      "memory_ops": 69,
+      "arithmetic_intensity": 0.812,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00011_1_MLP_modular_device_functions_base.ptx",
+      "path": "../raw/00011_1_MLP_modular_device_functions_base.ptx",
+      "size_kb": 5.23,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 2,
+      "kernel_names": [
+        "_Z15relu_activationPfi",
+        "_Z19linear_layer_kernelPfPKfS1_S_ii"
+      ],
+      "total_virtual_regs": 111,
+      "max_vreg_per_kernel": 32,
+      "mean_vreg_per_kernel": 13.9,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 86,
+      "instruction_category_counts": {
+        "load_store": 22,
+        "data_movement": 13,
+        "integer_arith": 26,
+        "comparison": 7,
+        "control_flow": 7,
+        "conversion": 5,
+        "logic_shift": 1,
+        "float_arith": 5
+      },
+      "top20_opcodes": {
+        "ld.global.f32": 12,
+        "add.s64": 10,
+        "mov.u32": 8,
+        "bra": 7,
+        "ld.param.u64": 5,
+        "cvta.to.global.u64": 5,
+        "mul.wide.s32": 5,
+        "fma.rn.ftz.f32": 5,
+        "mov.f32": 4,
+        "add.s32": 4,
+        "ld.param.u32": 3,
+        "mad.lo.s32": 3,
+        "setp.ge.s32": 2,
+        "st.global.f32": 2,
+        "setp.ne.s32": 2,
+        "max.ftz.f32": 1,
+        "setp.lt.s32": 1,
+        "and.b32": 1,
+        "setp.lt.u32": 1,
+        "sub.s32": 1
+      },
+      "unique_opcodes": 24,
+      "opcode_histogram": {
+        "ld.param.u64": 5,
+        "ld.param.u32": 3,
+        "mov.u32": 8,
+        "mad.lo.s32": 3,
+        "setp.ge.s32": 2,
+        "bra": 7,
+        "cvta.to.global.u64": 5,
+        "mul.wide.s32": 5,
+        "add.s64": 10,
+        "ld.global.f32": 12,
+        "mov.f32": 4,
+        "max.ftz.f32": 1,
+        "st.global.f32": 2,
+        "setp.lt.s32": 1,
+        "add.s32": 4,
+        "and.b32": 1,
+        "setp.lt.u32": 1,
+        "sub.s32": 1,
+        "mul.lo.s32": 1,
+        "mov.u64": 1,
+        "fma.rn.ftz.f32": 5,
+        "setp.ne.s32": 2,
+        "setp.eq.s32": 1,
+        "add.ftz.f32": 1
+      },
+      "precision_counts": {
+        "u64": 11,
+        "u32": 12,
+        "s32": 20,
+        "s64": 10,
+        "f32": 25,
+        "b32": 1
+      },
+      "precision_pct": {
+        "u64": 13.92,
+        "u32": 15.19,
+        "s32": 25.32,
+        "s64": 12.66,
+        "f32": 31.65,
+        "b32": 1.27
+      },
+      "functional_split": {
+        "compute": 38,
+        "memory": 22,
+        "overhead": 26
+      },
+      "functional_split_pct": {
+        "compute": 44.2,
+        "memory": 25.6,
+        "overhead": 30.2
+      },
+      "memory_access_counts": {
+        "ld_global": 12,
+        "st_global": 2,
+        "ld_shared": 0,
+        "st_shared": 0,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 5,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 5
+        }
+      },
+      "l2_pressure_score": 14,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 0.0,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 7,
+        "setp_count": 7
+      },
+      "special_register_uses": 6,
+      "special_register_types": {
+        "%ctaid": 2,
+        "%ntid": 2,
+        "%tid": 2
+      },
+      "domain_scores": {
+        "AI_TRAINING": 19,
+        "HPC_STENCIL": 12
+      },
+      "domains": [
+        "AI_TRAINING",
+        "HPC_STENCIL"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "AI_TRAINING",
+          19
+        ],
+        [
+          "HPC_STENCIL",
+          12
+        ]
+      ],
+      "regex_domain": "AI_TRAINING",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 31,
+      "memory_ops": 14,
+      "arithmetic_intensity": 2.214,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00011_shared_mem_conv2d_relu_bias_base.ptx",
+      "path": "../raw/00011_shared_mem_conv2d_relu_bias_base.ptx",
+      "size_kb": 10.31,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z30shared_conv2d_relu_bias_kernelPKfS0_S0_S0_Pfiiiiiiiii"
+      ],
+      "total_virtual_regs": 221,
+      "max_vreg_per_kernel": 117,
+      "mean_vreg_per_kernel": 55.2,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 204,
+      "instruction_category_counts": {
+        "load_store": 34,
+        "data_movement": 24,
+        "logic_shift": 20,
+        "integer_arith": 63,
+        "conversion": 8,
+        "comparison": 26,
+        "control_flow": 20,
+        "synchronization": 2,
+        "float_arith": 7
+      },
+      "top20_opcodes": {
+        "add.s32": 36,
+        "mov.u32": 22,
+        "bra": 20,
+        "ld.shared.f32": 14,
+        "shl.b32": 12,
+        "setp.ge.s32": 12,
+        "setp.lt.s32": 9,
+        "ld.param.u32": 8,
+        "mad.lo.s32": 8,
+        "fma.rn.ftz.f32": 7,
+        "or.pred": 6,
+        "ld.param.u64": 5,
+        "mul.lo.s32": 5,
+        "cvta.to.global.u64": 5,
+        "add.s64": 5,
+        "mul.wide.s32": 4,
+        "ld.global.nc.f32": 4,
+        "setp.eq.s32": 3,
+        "sub.s32": 2,
+        "cvt.u32.u64": 2
+      },
+      "unique_opcodes": 32,
+      "opcode_histogram": {
+        "ld.param.u64": 5,
+        "ld.param.u32": 8,
+        "mov.u32": 22,
+        "shl.b32": 12,
+        "div.s32": 1,
+        "mul.lo.s32": 5,
+        "sub.s32": 2,
+        "cvt.s64.s32": 1,
+        "cvta.to.global.u64": 5,
+        "mul.wide.s32": 4,
+        "add.s64": 5,
+        "ld.global.nc.f32": 4,
+        "setp.lt.s32": 9,
+        "bra": 20,
+        "cvt.u32.u64": 2,
+        "add.s32": 36,
+        "setp.ge.s32": 12,
+        "or.pred": 6,
+        "and.b32": 1,
+        "mad.lo.s32": 8,
+        "mov.f32": 2,
+        "st.shared.f32": 2,
+        "bar.sync": 2,
+        "setp.lt.u32": 1,
+        "ld.shared.f32": 14,
+        "fma.rn.ftz.f32": 7,
+        "setp.ne.s32": 1,
+        "setp.eq.s32": 3,
+        "max.ftz.f32": 1,
+        "shl.b64": 1,
+        "add.ftz.f32": 1,
+        "st.global.f32": 1
+      },
+      "precision_counts": {
+        "u64": 10,
+        "u32": 33,
+        "b32": 13,
+        "s32": 82,
+        "s64": 5,
+        "f32": 32,
+        "pred": 6,
+        "b64": 1
+      },
+      "precision_pct": {
+        "u64": 5.49,
+        "u32": 18.13,
+        "b32": 7.14,
+        "s32": 45.05,
+        "s64": 2.75,
+        "f32": 17.58,
+        "pred": 3.3,
+        "b64": 0.55
+      },
+      "functional_split": {
+        "compute": 96,
+        "memory": 34,
+        "overhead": 74
+      },
+      "functional_split_pct": {
+        "compute": 47.1,
+        "memory": 16.7,
+        "overhead": 36.3
+      },
+      "memory_access_counts": {
+        "ld_global": 4,
+        "st_global": 1,
+        "ld_shared": 14,
+        "st_shared": 2,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 4,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 4
+        }
+      },
+      "l2_pressure_score": 5,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 3.2,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 20,
+        "setp_count": 26
+      },
+      "special_register_uses": 7,
+      "special_register_types": {
+        "%tid": 2,
+        "%ctaid": 3,
+        "%ntid": 2
+      },
+      "domain_scores": {
+        "AI_TRAINING": 25,
+        "GRAPHICS_RENDERING": 9,
+        "PHYSICS_SIMULATION": 8,
+        "HPC_STENCIL": 16
+      },
+      "domains": [
+        "AI_TRAINING",
+        "HPC_STENCIL",
+        "GRAPHICS_RENDERING",
+        "PHYSICS_SIMULATION"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "AI_TRAINING",
+          25
+        ],
+        [
+          "HPC_STENCIL",
+          16
+        ],
+        [
+          "GRAPHICS_RENDERING",
+          9
+        ]
+      ],
+      "regex_domain": "AI_TRAINING",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 70,
+      "memory_ops": 21,
+      "arithmetic_intensity": 3.333,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00012_atomic_reduction_optimization_base_base.ptx",
+      "path": "../raw/00012_atomic_reduction_optimization_base_base.ptx",
+      "size_kb": 7.96,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z20matmul_atomic_kernelPKfS0_Pfi"
+      ],
+      "total_virtual_regs": 182,
+      "max_vreg_per_kernel": 112,
+      "mean_vreg_per_kernel": 45.5,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 170,
+      "instruction_category_counts": {
+        "load_store": 72,
+        "data_movement": 12,
+        "logic_shift": 11,
+        "integer_arith": 24,
+        "comparison": 8,
+        "control_flow": 5,
+        "conversion": 3,
+        "synchronization": 2,
+        "float_arith": 32,
+        "atomic": 1
+      },
+      "top20_opcodes": {
+        "ld.shared.f32": 64,
+        "fma.rn.ftz.f32": 32,
+        "add.s32": 14,
+        "mov.u32": 7,
+        "setp.ge.s32": 6,
+        "shl.b32": 5,
+        "mov.f32": 5,
+        "bra": 5,
+        "add.s64": 4,
+        "ld.param.u64": 3,
+        "mad.lo.s32": 3,
+        "cvta.to.global.u64": 3,
+        "mul.wide.s32": 3,
+        "or.pred": 3,
+        "setp.lt.s32": 2,
+        "shr.s32": 2,
+        "ld.global.nc.f32": 2,
+        "st.shared.f32": 2,
+        "bar.sync": 2,
+        "ld.param.u32": 1
+      },
+      "unique_opcodes": 22,
+      "opcode_histogram": {
+        "ld.param.u64": 3,
+        "ld.param.u32": 1,
+        "mov.u32": 7,
+        "shl.b32": 5,
+        "add.s32": 14,
+        "setp.lt.s32": 2,
+        "mov.f32": 5,
+        "bra": 5,
+        "mad.lo.s32": 3,
+        "cvta.to.global.u64": 3,
+        "mul.wide.s32": 3,
+        "add.s64": 4,
+        "shr.s32": 2,
+        "shr.u32": 1,
+        "setp.ge.s32": 6,
+        "or.pred": 3,
+        "ld.global.nc.f32": 2,
+        "st.shared.f32": 2,
+        "bar.sync": 2,
+        "ld.shared.f32": 64,
+        "fma.rn.ftz.f32": 32,
+        "atom.global.add.f32": 1
+      },
+      "precision_counts": {
+        "u64": 6,
+        "u32": 9,
+        "b32": 5,
+        "s32": 30,
+        "f32": 106,
+        "s64": 4,
+        "pred": 3
+      },
+      "precision_pct": {
+        "u64": 3.68,
+        "u32": 5.52,
+        "b32": 3.07,
+        "s32": 18.4,
+        "f32": 65.03,
+        "s64": 2.45,
+        "pred": 1.84
+      },
+      "functional_split": {
+        "compute": 64,
+        "memory": 73,
+        "overhead": 33
+      },
+      "functional_split_pct": {
+        "compute": 37.6,
+        "memory": 42.9,
+        "overhead": 19.4
+      },
+      "memory_access_counts": {
+        "ld_global": 2,
+        "st_global": 0,
+        "ld_shared": 64,
+        "st_shared": 2,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 1,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 1,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 3
+        }
+      },
+      "l2_pressure_score": 6,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 33.0,
+      "atomic_density_per1k": 5.88,
+      "warp_divergence": {
+        "predicated_branches": 5,
+        "setp_count": 8
+      },
+      "special_register_uses": 4,
+      "special_register_types": {
+        "%ctaid": 2,
+        "%tid": 2
+      },
+      "domain_scores": {
+        "AI_TRAINING": 100,
+        "GRAPHICS_RENDERING": 9
+      },
+      "domains": [
+        "AI_TRAINING",
+        "GRAPHICS_RENDERING"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "AI_TRAINING",
+          100
+        ],
+        [
+          "GRAPHICS_RENDERING",
+          9
+        ]
+      ],
+      "regex_domain": "AI_TRAINING",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 56,
+      "memory_ops": 68,
+      "arithmetic_intensity": 0.824,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00012_tiled_atomic_conv2d_relu_bias_base.ptx",
+      "path": "../raw/00012_tiled_atomic_conv2d_relu_bias_base.ptx",
+      "size_kb": 8.34,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z36tiled_atomic_conv2d_relu_bias_kernelPKfS0_S0_S0_Pfiiiiiiiii"
+      ],
+      "total_virtual_regs": 157,
+      "max_vreg_per_kernel": 66,
+      "mean_vreg_per_kernel": 39.2,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 142,
+      "instruction_category_counts": {
+        "load_store": 32,
+        "conversion": 5,
+        "data_movement": 15,
+        "logic_shift": 8,
+        "integer_arith": 46,
+        "comparison": 13,
+        "control_flow": 13,
+        "synchronization": 2,
+        "float_arith": 7,
+        "atomic": 1
+      },
+      "top20_opcodes": {
+        "add.s32": 17,
+        "ld.global.nc.f32": 16,
+        "bra": 13,
+        "mov.u32": 12,
+        "ld.param.u32": 8,
+        "add.s64": 7,
+        "fma.rn.ftz.f32": 7,
+        "mul.wide.s32": 6,
+        "ld.param.u64": 5,
+        "cvta.to.global.u64": 5,
+        "mul.lo.s32": 5,
+        "mad.lo.s32": 5,
+        "shl.b32": 4,
+        "setp.lt.s32": 4,
+        "setp.ge.s32": 3,
+        "mov.f32": 3,
+        "setp.eq.s32": 3,
+        "and.b32": 2,
+        "sub.s32": 2,
+        "setp.ne.s32": 2
+      },
+      "unique_opcodes": 31,
+      "opcode_histogram": {
+        "ld.param.u64": 5,
+        "ld.param.u32": 8,
+        "cvta.to.global.u64": 5,
+        "mov.u32": 12,
+        "shl.b32": 4,
+        "add.s32": 17,
+        "shr.u32": 1,
+        "and.b32": 2,
+        "div.u32": 1,
+        "mul.lo.s32": 5,
+        "sub.s32": 2,
+        "setp.ge.s32": 3,
+        "or.pred": 1,
+        "bra": 13,
+        "setp.ne.s32": 2,
+        "st.shared.u32": 1,
+        "bar.sync": 2,
+        "mov.f32": 3,
+        "setp.lt.s32": 4,
+        "mad.lo.s32": 5,
+        "setp.lt.u32": 1,
+        "mul.wide.s32": 6,
+        "add.s64": 7,
+        "ld.global.nc.f32": 16,
+        "fma.rn.ftz.f32": 7,
+        "setp.eq.s32": 3,
+        "atom.shared.add.f32": 1,
+        "ld.shared.f32": 1,
+        "add.ftz.f32": 2,
+        "max.ftz.f32": 1,
+        "st.global.f32": 1
+      },
+      "precision_counts": {
+        "u64": 10,
+        "u32": 24,
+        "b32": 6,
+        "s32": 47,
+        "pred": 1,
+        "f32": 32,
+        "s64": 7
+      },
+      "precision_pct": {
+        "u64": 7.87,
+        "u32": 18.9,
+        "b32": 4.72,
+        "s32": 37.01,
+        "pred": 0.79,
+        "f32": 25.2,
+        "s64": 5.51
+      },
+      "functional_split": {
+        "compute": 66,
+        "memory": 33,
+        "overhead": 43
+      },
+      "functional_split_pct": {
+        "compute": 46.5,
+        "memory": 23.2,
+        "overhead": 30.3
+      },
+      "memory_access_counts": {
+        "ld_global": 16,
+        "st_global": 1,
+        "ld_shared": 1,
+        "st_shared": 1,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 1,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 6,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 6
+        }
+      },
+      "l2_pressure_score": 17,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 0.118,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 13,
+        "setp_count": 13
+      },
+      "special_register_uses": 5,
+      "special_register_types": {
+        "%ctaid": 3,
+        "%tid": 2
+      },
+      "domain_scores": {
+        "AI_TRAINING": 25,
+        "GRAPHICS_RENDERING": 9,
+        "PHYSICS_SIMULATION": 8,
+        "HPC_STENCIL": 28
+      },
+      "domains": [
+        "HPC_STENCIL",
+        "AI_TRAINING",
+        "GRAPHICS_RENDERING",
+        "PHYSICS_SIMULATION"
+      ],
+      "primary_domain": "HPC_STENCIL",
+      "top3_domains": [
+        [
+          "HPC_STENCIL",
+          28
+        ],
+        [
+          "AI_TRAINING",
+          25
+        ],
+        [
+          "GRAPHICS_RENDERING",
+          9
+        ]
+      ],
+      "regex_domain": "HPC_STENCIL",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "HPC / Scientific",
+      "compute_ops": 53,
+      "memory_ops": 19,
+      "arithmetic_intensity": 2.789,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00013_tiled_opt_base.ptx",
+      "path": "../raw/00013_tiled_opt_base.ptx",
+      "size_kb": 8.71,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z29matmul_tiled_optimized_kernelPKfS0_Pfi"
+      ],
+      "total_virtual_regs": 206,
+      "max_vreg_per_kernel": 113,
+      "mean_vreg_per_kernel": 51.5,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 198,
+      "instruction_category_counts": {
+        "load_store": 76,
+        "data_movement": 18,
+        "logic_shift": 17,
+        "integer_arith": 31,
+        "comparison": 10,
+        "control_flow": 8,
+        "conversion": 4,
+        "synchronization": 2,
+        "float_arith": 32
+      },
+      "top20_opcodes": {
+        "ld.shared.f32": 64,
+        "fma.rn.ftz.f32": 32,
+        "add.s32": 19,
+        "mov.u32": 14,
+        "shl.b32": 10,
+        "bra": 6,
+        "setp.ge.s32": 6,
+        "add.s64": 5,
+        "mov.f32": 4,
+        "cvta.to.global.u64": 4,
+        "mul.wide.s32": 4,
+        "ld.global.nc.f32": 4,
+        "ld.param.u64": 3,
+        "mad.lo.s32": 3,
+        "st.shared.f32": 3,
+        "or.pred": 3,
+        "setp.lt.s32": 2,
+        "shr.s32": 2,
+        "setp.le.u32": 2,
+        "bra.uni": 2
+      },
+      "unique_opcodes": 25,
+      "opcode_histogram": {
+        "ld.param.u64": 3,
+        "ld.param.u32": 1,
+        "mov.u32": 14,
+        "shl.b32": 10,
+        "add.s32": 19,
+        "setp.lt.s32": 2,
+        "mov.f32": 4,
+        "bra": 6,
+        "mad.lo.s32": 3,
+        "cvta.to.global.u64": 4,
+        "mul.wide.s32": 4,
+        "add.s64": 5,
+        "shr.s32": 2,
+        "shr.u32": 1,
+        "setp.le.u32": 2,
+        "and.pred": 1,
+        "bra.uni": 2,
+        "ld.global.nc.f32": 4,
+        "st.shared.f32": 3,
+        "setp.ge.s32": 6,
+        "or.pred": 3,
+        "bar.sync": 2,
+        "ld.shared.f32": 64,
+        "fma.rn.ftz.f32": 32,
+        "st.global.f32": 1
+      },
+      "precision_counts": {
+        "u64": 7,
+        "u32": 18,
+        "b32": 10,
+        "s32": 36,
+        "f32": 108,
+        "s64": 5,
+        "pred": 4
+      },
+      "precision_pct": {
+        "u64": 3.72,
+        "u32": 9.57,
+        "b32": 5.32,
+        "s32": 19.15,
+        "f32": 57.45,
+        "s64": 2.66,
+        "pred": 2.13
+      },
+      "functional_split": {
+        "compute": 73,
+        "memory": 76,
+        "overhead": 49
+      },
+      "functional_split_pct": {
+        "compute": 36.9,
+        "memory": 38.4,
+        "overhead": 24.7
+      },
+      "memory_access_counts": {
+        "ld_global": 4,
+        "st_global": 1,
+        "ld_shared": 64,
+        "st_shared": 3,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 3,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 4
+        }
+      },
+      "l2_pressure_score": 5,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 13.4,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 6,
+        "setp_count": 10
+      },
+      "special_register_uses": 9,
+      "special_register_types": {
+        "%ctaid": 2,
+        "%tid": 7
+      },
+      "domain_scores": {
+        "AI_TRAINING": 96,
+        "GRAPHICS_RENDERING": 24,
+        "HPC_STENCIL": 8,
+        "IMAGE_PROCESSING": 20
+      },
+      "domains": [
+        "AI_TRAINING",
+        "GRAPHICS_RENDERING",
+        "IMAGE_PROCESSING",
+        "HPC_STENCIL"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "AI_TRAINING",
+          96
+        ],
+        [
+          "GRAPHICS_RENDERING",
+          24
+        ],
+        [
+          "IMAGE_PROCESSING",
+          20
+        ]
+      ],
+      "regex_domain": "AI_TRAINING",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 63,
+      "memory_ops": 72,
+      "arithmetic_intensity": 0.875,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00014_builtin_relu_fusion_base.ptx",
+      "path": "../raw/00014_builtin_relu_fusion_base.ptx",
+      "size_kb": 1.49,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 0,
+      "kernel_names": [],
+      "total_virtual_regs": 0,
+      "max_vreg_per_kernel": 0,
+      "mean_vreg_per_kernel": 0,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 0,
+      "instruction_category_counts": {},
+      "top20_opcodes": {},
+      "unique_opcodes": 0,
+      "opcode_histogram": {},
+      "precision_counts": {},
+      "precision_pct": {},
+      "functional_split": {
+        "compute": 0,
+        "memory": 0,
+        "overhead": 0
+      },
+      "functional_split_pct": {},
+      "memory_access_counts": {
+        "ld_global": 0,
+        "st_global": 0,
+        "ld_shared": 0,
+        "st_shared": 0,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 0,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {}
+      },
+      "l2_pressure_score": 0,
+      "coalescing_ratio": null,
+      "shared_to_global_ratio": null,
+      "atomic_density_per1k": 0,
+      "warp_divergence": {
+        "predicated_branches": 0,
+        "setp_count": 0
+      },
+      "special_register_uses": 0,
+      "special_register_types": {},
+      "domain_scores": {},
+      "domains": [],
+      "primary_domain": "DATA_MODULE",
+      "top3_domains": [],
+      "regex_domain": "DATA_MODULE",
+      "llm_domain": "DATA_MODULE",
+      "domain_group": "Other",
+      "compute_ops": 0,
+      "memory_ops": 0,
+      "arithmetic_intensity": null,
+      "l2_contention_risk": "NONE"
+    },
+    {
+      "file": "00014_optimized_tiled_conv2d_relu_bias_base.ptx",
+      "path": "../raw/00014_optimized_tiled_conv2d_relu_bias_base.ptx",
+      "size_kb": 8.47,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z39optimized_tiled_conv2d_relu_bias_kernelPKfS0_S0_S0_Pfiiiiiiiii"
+      ],
+      "total_virtual_regs": 157,
+      "max_vreg_per_kernel": 66,
+      "mean_vreg_per_kernel": 39.2,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 142,
+      "instruction_category_counts": {
+        "load_store": 32,
+        "conversion": 5,
+        "data_movement": 15,
+        "logic_shift": 8,
+        "integer_arith": 46,
+        "comparison": 13,
+        "control_flow": 13,
+        "synchronization": 2,
+        "float_arith": 7,
+        "atomic": 1
+      },
+      "top20_opcodes": {
+        "add.s32": 17,
+        "ld.global.nc.f32": 16,
+        "bra": 13,
+        "mov.u32": 12,
+        "ld.param.u32": 8,
+        "add.s64": 7,
+        "fma.rn.ftz.f32": 7,
+        "mul.wide.s32": 6,
+        "ld.param.u64": 5,
+        "cvta.to.global.u64": 5,
+        "mul.lo.s32": 5,
+        "mad.lo.s32": 5,
+        "shl.b32": 4,
+        "setp.lt.s32": 4,
+        "setp.ge.s32": 3,
+        "mov.f32": 3,
+        "setp.eq.s32": 3,
+        "and.b32": 2,
+        "sub.s32": 2,
+        "setp.ne.s32": 2
+      },
+      "unique_opcodes": 31,
+      "opcode_histogram": {
+        "ld.param.u64": 5,
+        "ld.param.u32": 8,
+        "cvta.to.global.u64": 5,
+        "mov.u32": 12,
+        "shl.b32": 4,
+        "add.s32": 17,
+        "shr.u32": 1,
+        "and.b32": 2,
+        "div.u32": 1,
+        "mul.lo.s32": 5,
+        "sub.s32": 2,
+        "setp.ge.s32": 3,
+        "or.pred": 1,
+        "bra": 13,
+        "setp.ne.s32": 2,
+        "st.shared.u32": 1,
+        "bar.sync": 2,
+        "mov.f32": 3,
+        "setp.lt.s32": 4,
+        "mad.lo.s32": 5,
+        "setp.lt.u32": 1,
+        "mul.wide.s32": 6,
+        "add.s64": 7,
+        "ld.global.nc.f32": 16,
+        "fma.rn.ftz.f32": 7,
+        "setp.eq.s32": 3,
+        "atom.shared.add.f32": 1,
+        "ld.shared.f32": 1,
+        "add.ftz.f32": 2,
+        "max.ftz.f32": 1,
+        "st.global.f32": 1
+      },
+      "precision_counts": {
+        "u64": 10,
+        "u32": 24,
+        "b32": 6,
+        "s32": 47,
+        "pred": 1,
+        "f32": 32,
+        "s64": 7
+      },
+      "precision_pct": {
+        "u64": 7.87,
+        "u32": 18.9,
+        "b32": 4.72,
+        "s32": 37.01,
+        "pred": 0.79,
+        "f32": 25.2,
+        "s64": 5.51
+      },
+      "functional_split": {
+        "compute": 66,
+        "memory": 33,
+        "overhead": 43
+      },
+      "functional_split_pct": {
+        "compute": 46.5,
+        "memory": 23.2,
+        "overhead": 30.3
+      },
+      "memory_access_counts": {
+        "ld_global": 16,
+        "st_global": 1,
+        "ld_shared": 1,
+        "st_shared": 1,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 1,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 6,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 6
+        }
+      },
+      "l2_pressure_score": 17,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 0.118,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 13,
+        "setp_count": 13
+      },
+      "special_register_uses": 5,
+      "special_register_types": {
+        "%ctaid": 3,
+        "%tid": 2
+      },
+      "domain_scores": {
+        "AI_TRAINING": 25,
+        "GRAPHICS_RENDERING": 9,
+        "PHYSICS_SIMULATION": 8,
+        "HPC_STENCIL": 28
+      },
+      "domains": [
+        "HPC_STENCIL",
+        "AI_TRAINING",
+        "GRAPHICS_RENDERING",
+        "PHYSICS_SIMULATION"
+      ],
+      "primary_domain": "HPC_STENCIL",
+      "top3_domains": [
+        [
+          "HPC_STENCIL",
+          28
+        ],
+        [
+          "AI_TRAINING",
+          25
+        ],
+        [
+          "GRAPHICS_RENDERING",
+          9
+        ]
+      ],
+      "regex_domain": "HPC_STENCIL",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "HPC / Scientific",
+      "compute_ops": 53,
+      "memory_ops": 19,
+      "arithmetic_intensity": 2.789,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00014_optimized_tiled_matmul_base.ptx",
+      "path": "../raw/00014_optimized_tiled_matmul_base.ptx",
+      "size_kb": 7.84,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z23optimized_matmul_kernelPKfS0_Pfi"
+      ],
+      "total_virtual_regs": 177,
+      "max_vreg_per_kernel": 111,
+      "mean_vreg_per_kernel": 44.2,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 168,
+      "instruction_category_counts": {
+        "load_store": 73,
+        "data_movement": 12,
+        "logic_shift": 8,
+        "integer_arith": 25,
+        "comparison": 6,
+        "control_flow": 7,
+        "conversion": 3,
+        "synchronization": 2,
+        "float_arith": 32
+      },
+      "top20_opcodes": {
+        "ld.shared.f32": 64,
+        "fma.rn.ftz.f32": 32,
+        "add.s32": 14,
+        "mov.u32": 7,
+        "bra": 5,
+        "mov.f32": 5,
+        "shl.b32": 4,
+        "setp.ge.s32": 4,
+        "add.s64": 4,
+        "ld.param.u64": 3,
+        "mad.lo.s32": 3,
+        "cvta.to.global.u64": 3,
+        "mul.wide.s32": 3,
+        "bra.uni": 2,
+        "shr.s32": 2,
+        "ld.global.nc.f32": 2,
+        "st.shared.f32": 2,
+        "bar.sync": 2,
+        "ld.param.u32": 1,
+        "or.pred": 1
+      },
+      "unique_opcodes": 25,
+      "opcode_histogram": {
+        "ld.param.u64": 3,
+        "ld.param.u32": 1,
+        "mov.u32": 7,
+        "shl.b32": 4,
+        "add.s32": 14,
+        "setp.ge.s32": 4,
+        "or.pred": 1,
+        "bra": 5,
+        "setp.gt.s32": 1,
+        "bra.uni": 2,
+        "mul.lo.s32": 1,
+        "mad.lo.s32": 3,
+        "cvta.to.global.u64": 3,
+        "mul.wide.s32": 3,
+        "add.s64": 4,
+        "shr.s32": 2,
+        "shr.u32": 1,
+        "mov.f32": 5,
+        "ld.global.nc.f32": 2,
+        "st.shared.f32": 2,
+        "bar.sync": 2,
+        "ld.shared.f32": 64,
+        "fma.rn.ftz.f32": 32,
+        "setp.lt.s32": 1,
+        "st.global.f32": 1
+      },
+      "precision_counts": {
+        "u64": 6,
+        "u32": 9,
+        "b32": 4,
+        "s32": 29,
+        "pred": 1,
+        "s64": 4,
+        "f32": 106
+      },
+      "precision_pct": {
+        "u64": 3.77,
+        "u32": 5.66,
+        "b32": 2.52,
+        "s32": 18.24,
+        "pred": 0.63,
+        "s64": 2.52,
+        "f32": 66.67
+      },
+      "functional_split": {
+        "compute": 63,
+        "memory": 73,
+        "overhead": 32
+      },
+      "functional_split_pct": {
+        "compute": 37.5,
+        "memory": 43.5,
+        "overhead": 19.0
+      },
+      "memory_access_counts": {
+        "ld_global": 2,
+        "st_global": 1,
+        "ld_shared": 64,
+        "st_shared": 2,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 3,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "132": 1,
+          "4": 3
+        }
+      },
+      "l2_pressure_score": 3,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 22.0,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 5,
+        "setp_count": 6
+      },
+      "special_register_uses": 4,
+      "special_register_types": {
+        "%ctaid": 2,
+        "%tid": 2
+      },
+      "domain_scores": {
+        "AI_TRAINING": 96,
+        "GRAPHICS_RENDERING": 9
+      },
+      "domains": [
+        "AI_TRAINING",
+        "GRAPHICS_RENDERING"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "AI_TRAINING",
+          96
+        ],
+        [
+          "GRAPHICS_RENDERING",
+          9
+        ]
+      ],
+      "regex_domain": "AI_TRAINING",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 57,
+      "memory_ops": 69,
+      "arithmetic_intensity": 0.826,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00015_matmul_optimized_vectorized_base.ptx",
+      "path": "../raw/00015_matmul_optimized_vectorized_base.ptx",
+      "size_kb": 9.42,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z34matmul_optimized_vectorized_kernelPKfS0_Pfi"
+      ],
+      "total_virtual_regs": 242,
+      "max_vreg_per_kernel": 134,
+      "mean_vreg_per_kernel": 60.5,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 214,
+      "instruction_category_counts": {
+        "data_movement": 15,
+        "load_store": 77,
+        "integer_arith": 66,
+        "logic_shift": 20,
+        "comparison": 8,
+        "control_flow": 5,
+        "conversion": 5,
+        "synchronization": 2,
+        "float_arith": 16
+      },
+      "top20_opcodes": {
+        "ld.shared.f32": 64,
+        "add.ftz.f32": 17,
+        "mul.ftz.f32": 16,
+        "fma.rn.ftz.f32": 16,
+        "add.s32": 15,
+        "add.s64": 8,
+        "mov.u32": 7,
+        "mov.f32": 7,
+        "shr.s32": 6,
+        "setp.ge.s32": 6,
+        "shl.b32": 5,
+        "bra": 5,
+        "mul.wide.s32": 4,
+        "ld.param.u64": 3,
+        "shr.u32": 3,
+        "cvta.to.global.u64": 3,
+        "or.pred": 3,
+        "add.u64": 2,
+        "setp.lt.s32": 2,
+        "cvt.s64.s32": 2
+      },
+      "unique_opcodes": 33,
+      "opcode_histogram": {
+        "mov.u64": 1,
+        "ld.param.u64": 3,
+        "ld.param.u32": 1,
+        "add.u64": 2,
+        "mov.u32": 7,
+        "shl.b32": 5,
+        "add.s32": 15,
+        "setp.lt.s32": 2,
+        "mov.f32": 7,
+        "bra": 5,
+        "shr.s32": 6,
+        "shr.u32": 3,
+        "and.b32": 1,
+        "sub.s32": 1,
+        "mul.wide.s32": 4,
+        "add.s64": 8,
+        "cvt.s64.s32": 2,
+        "mul.lo.s32": 2,
+        "cvta.to.global.u64": 3,
+        "shl.b64": 2,
+        "setp.ge.s32": 6,
+        "or.pred": 3,
+        "ld.global.nc.v4.u32": 2,
+        "st.local.v4.u32": 2,
+        "ld.local.f32": 2,
+        "st.shared.f32": 2,
+        "bar.sync": 2,
+        "ld.shared.f32": 64,
+        "mul.ftz.f32": 16,
+        "fma.rn.ftz.f32": 16,
+        "add.ftz.f32": 17,
+        "mad.lo.s32": 1,
+        "st.global.f32": 1
+      },
+      "precision_counts": {
+        "u64": 9,
+        "u32": 15,
+        "b32": 6,
+        "s32": 39,
+        "f32": 125,
+        "s64": 8,
+        "b64": 2,
+        "pred": 3
+      },
+      "precision_pct": {
+        "u64": 4.35,
+        "u32": 7.25,
+        "b32": 2.9,
+        "s32": 18.84,
+        "f32": 60.39,
+        "s64": 3.86,
+        "b64": 0.97,
+        "pred": 1.45
+      },
+      "functional_split": {
+        "compute": 90,
+        "memory": 77,
+        "overhead": 47
+      },
+      "functional_split_pct": {
+        "compute": 42.1,
+        "memory": 36.0,
+        "overhead": 22.0
+      },
+      "memory_access_counts": {
+        "ld_global": 2,
+        "st_global": 1,
+        "ld_shared": 64,
+        "st_shared": 2,
+        "ld_local": 2,
+        "st_local": 2,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 2,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 2,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 4
+        }
+      },
+      "l2_pressure_score": 3,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 22.0,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 5,
+        "setp_count": 8
+      },
+      "special_register_uses": 4,
+      "special_register_types": {
+        "%ctaid": 2,
+        "%tid": 2
+      },
+      "domain_scores": {
+        "AI_TRAINING": 48,
+        "GRAPHICS_RENDERING": 9
+      },
+      "domains": [
+        "AI_TRAINING",
+        "GRAPHICS_RENDERING"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "AI_TRAINING",
+          48
+        ],
+        [
+          "GRAPHICS_RENDERING",
+          9
+        ]
+      ],
+      "regex_domain": "AI_TRAINING",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 82,
+      "memory_ops": 73,
+      "arithmetic_intensity": 1.123,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00017_coalesced_conv2d_relu_bias_base_base.ptx",
+      "path": "../raw/00017_coalesced_conv2d_relu_bias_base_base.ptx",
+      "size_kb": 7.51,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z33coalesced_conv2d_relu_bias_kernelPKfS0_S0_S0_Pfiiiiiiiii"
+      ],
+      "total_virtual_regs": 140,
+      "max_vreg_per_kernel": 56,
+      "mean_vreg_per_kernel": 35.0,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 123,
+      "instruction_category_counts": {
+        "load_store": 30,
+        "conversion": 6,
+        "data_movement": 12,
+        "integer_arith": 42,
+        "comparison": 12,
+        "logic_shift": 3,
+        "control_flow": 11,
+        "float_arith": 7
+      },
+      "top20_opcodes": {
+        "ld.global.nc.f32": 16,
+        "add.s32": 13,
+        "mov.u32": 11,
+        "bra": 11,
+        "ld.param.u32": 8,
+        "add.s64": 7,
+        "fma.rn.ftz.f32": 7,
+        "mad.lo.s32": 6,
+        "mul.wide.s32": 6,
+        "ld.param.u64": 5,
+        "cvta.to.global.u64": 5,
+        "mul.lo.s32": 5,
+        "setp.lt.s32": 5,
+        "setp.eq.s32": 3,
+        "sub.s32": 2,
+        "setp.ge.s32": 2,
+        "div.u32": 1,
+        "or.pred": 1,
+        "cvt.s64.s32": 1,
+        "and.b32": 1
+      },
+      "unique_opcodes": 27,
+      "opcode_histogram": {
+        "ld.param.u64": 5,
+        "ld.param.u32": 8,
+        "cvta.to.global.u64": 5,
+        "mov.u32": 11,
+        "mad.lo.s32": 6,
+        "div.u32": 1,
+        "mul.lo.s32": 5,
+        "sub.s32": 2,
+        "setp.ge.s32": 2,
+        "or.pred": 1,
+        "bra": 11,
+        "cvt.s64.s32": 1,
+        "mul.wide.s32": 6,
+        "add.s64": 7,
+        "ld.global.nc.f32": 16,
+        "setp.lt.s32": 5,
+        "add.s32": 13,
+        "and.b32": 1,
+        "setp.lt.u32": 1,
+        "fma.rn.ftz.f32": 7,
+        "setp.ne.s32": 1,
+        "setp.eq.s32": 3,
+        "shl.b64": 1,
+        "mov.f32": 1,
+        "max.ftz.f32": 1,
+        "add.ftz.f32": 1,
+        "st.global.f32": 1
+      },
+      "precision_counts": {
+        "u64": 10,
+        "u32": 21,
+        "s32": 44,
+        "pred": 1,
+        "s64": 7,
+        "f32": 27,
+        "b32": 1,
+        "b64": 1
+      },
+      "precision_pct": {
+        "u64": 8.93,
+        "u32": 18.75,
+        "s32": 39.29,
+        "pred": 0.89,
+        "s64": 6.25,
+        "f32": 24.11,
+        "b32": 0.89,
+        "b64": 0.89
+      },
+      "functional_split": {
+        "compute": 61,
+        "memory": 30,
+        "overhead": 32
+      },
+      "functional_split_pct": {
+        "compute": 49.6,
+        "memory": 24.4,
+        "overhead": 26.0
+      },
+      "memory_access_counts": {
+        "ld_global": 16,
+        "st_global": 1,
+        "ld_shared": 0,
+        "st_shared": 0,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 6,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 6
+        }
+      },
+      "l2_pressure_score": 17,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 0.0,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 11,
+        "setp_count": 12
+      },
+      "special_register_uses": 5,
+      "special_register_types": {
+        "%ntid": 1,
+        "%ctaid": 3,
+        "%tid": 1
+      },
+      "domain_scores": {
+        "AI_TRAINING": 25,
+        "PHYSICS_SIMULATION": 8,
+        "HPC_STENCIL": 24
+      },
+      "domains": [
+        "AI_TRAINING",
+        "HPC_STENCIL",
+        "PHYSICS_SIMULATION"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "AI_TRAINING",
+          25
+        ],
+        [
+          "HPC_STENCIL",
+          24
+        ],
+        [
+          "PHYSICS_SIMULATION",
+          8
+        ]
+      ],
+      "regex_domain": "AI_TRAINING",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 49,
+      "memory_ops": 17,
+      "arithmetic_intensity": 2.882,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00017_minimal_synchronization_base_base.ptx",
+      "path": "../raw/00017_minimal_synchronization_base_base.ptx",
+      "size_kb": 8.08,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z26matmul_minimal_sync_kernelPKfS0_Pfi"
+      ],
+      "total_virtual_regs": 179,
+      "max_vreg_per_kernel": 111,
+      "mean_vreg_per_kernel": 44.8,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 171,
+      "instruction_category_counts": {
+        "load_store": 73,
+        "data_movement": 12,
+        "logic_shift": 9,
+        "integer_arith": 25,
+        "comparison": 7,
+        "control_flow": 8,
+        "conversion": 3,
+        "synchronization": 2,
+        "float_arith": 32
+      },
+      "top20_opcodes": {
+        "ld.shared.f32": 64,
+        "fma.rn.ftz.f32": 32,
+        "add.s32": 15,
+        "mov.u32": 7,
+        "bra": 6,
+        "shl.b32": 5,
+        "setp.ge.s32": 5,
+        "mov.f32": 5,
+        "add.s64": 4,
+        "ld.param.u64": 3,
+        "mad.lo.s32": 3,
+        "cvta.to.global.u64": 3,
+        "mul.wide.s32": 3,
+        "shr.s32": 2,
+        "bra.uni": 2,
+        "ld.global.nc.f32": 2,
+        "st.shared.f32": 2,
+        "bar.sync": 2,
+        "ld.param.u32": 1,
+        "or.pred": 1
+      },
+      "unique_opcodes": 24,
+      "opcode_histogram": {
+        "ld.param.u64": 3,
+        "ld.param.u32": 1,
+        "mov.u32": 7,
+        "shl.b32": 5,
+        "add.s32": 15,
+        "setp.ge.s32": 5,
+        "or.pred": 1,
+        "bra": 6,
+        "shr.s32": 2,
+        "shr.u32": 1,
+        "setp.gt.s32": 1,
+        "bra.uni": 2,
+        "mad.lo.s32": 3,
+        "cvta.to.global.u64": 3,
+        "mul.wide.s32": 3,
+        "add.s64": 4,
+        "mov.f32": 5,
+        "ld.global.nc.f32": 2,
+        "st.shared.f32": 2,
+        "bar.sync": 2,
+        "ld.shared.f32": 64,
+        "fma.rn.ftz.f32": 32,
+        "setp.lt.s32": 1,
+        "st.global.f32": 1
+      },
+      "precision_counts": {
+        "u64": 6,
+        "u32": 9,
+        "b32": 5,
+        "s32": 30,
+        "pred": 1,
+        "s64": 4,
+        "f32": 106
+      },
+      "precision_pct": {
+        "u64": 3.73,
+        "u32": 5.59,
+        "b32": 3.11,
+        "s32": 18.63,
+        "pred": 0.62,
+        "s64": 2.48,
+        "f32": 65.84
+      },
+      "functional_split": {
+        "compute": 64,
+        "memory": 73,
+        "overhead": 34
+      },
+      "functional_split_pct": {
+        "compute": 37.4,
+        "memory": 42.7,
+        "overhead": 19.9
+      },
+      "memory_access_counts": {
+        "ld_global": 2,
+        "st_global": 1,
+        "ld_shared": 64,
+        "st_shared": 2,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 3,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 3
+        }
+      },
+      "l2_pressure_score": 3,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 22.0,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 6,
+        "setp_count": 7
+      },
+      "special_register_uses": 4,
+      "special_register_types": {
+        "%ctaid": 2,
+        "%tid": 2
+      },
+      "domain_scores": {
+        "AI_TRAINING": 96,
+        "GRAPHICS_RENDERING": 9
+      },
+      "domains": [
+        "AI_TRAINING",
+        "GRAPHICS_RENDERING"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "AI_TRAINING",
+          96
+        ],
+        [
+          "GRAPHICS_RENDERING",
+          9
+        ]
+      ],
+      "regex_domain": "AI_TRAINING",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 57,
+      "memory_ops": 69,
+      "arithmetic_intensity": 0.826,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00017_strided_relu_fusion_base_base.ptx",
+      "path": "../raw/00017_strided_relu_fusion_base_base.ptx",
+      "size_kb": 3.58,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z22relu_stride_activationPfi"
+      ],
+      "total_virtual_regs": 63,
+      "max_vreg_per_kernel": 29,
+      "mean_vreg_per_kernel": 15.8,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 59,
+      "instruction_category_counts": {
+        "load_store": 12,
+        "conversion": 1,
+        "data_movement": 6,
+        "integer_arith": 28,
+        "comparison": 5,
+        "control_flow": 5,
+        "logic_shift": 2
+      },
+      "top20_opcodes": {
+        "add.s32": 10,
+        "add.s64": 6,
+        "bra": 5,
+        "ld.global.f32": 5,
+        "max.ftz.f32": 5,
+        "st.global.f32": 5,
+        "mov.u32": 4,
+        "mul.wide.s32": 4,
+        "mov.f32": 2,
+        "ld.param.u64": 1,
+        "ld.param.u32": 1,
+        "cvta.to.global.u64": 1,
+        "mad.lo.s32": 1,
+        "mul.lo.s32": 1,
+        "setp.ge.s32": 1,
+        "not.b32": 1,
+        "div.u32": 1,
+        "and.b32": 1,
+        "setp.eq.s32": 1,
+        "setp.ne.s32": 1
+      },
+      "unique_opcodes": 22,
+      "opcode_histogram": {
+        "ld.param.u64": 1,
+        "ld.param.u32": 1,
+        "cvta.to.global.u64": 1,
+        "mov.u32": 4,
+        "mad.lo.s32": 1,
+        "mul.lo.s32": 1,
+        "setp.ge.s32": 1,
+        "bra": 5,
+        "add.s32": 10,
+        "not.b32": 1,
+        "div.u32": 1,
+        "and.b32": 1,
+        "setp.eq.s32": 1,
+        "mul.wide.s32": 4,
+        "add.s64": 6,
+        "ld.global.f32": 5,
+        "mov.f32": 2,
+        "max.ftz.f32": 5,
+        "st.global.f32": 5,
+        "setp.ne.s32": 1,
+        "setp.lt.u32": 1,
+        "setp.lt.s32": 1
+      },
+      "precision_counts": {
+        "u64": 2,
+        "u32": 7,
+        "s32": 20,
+        "b32": 2,
+        "s64": 6,
+        "f32": 17
+      },
+      "precision_pct": {
+        "u64": 3.7,
+        "u32": 12.96,
+        "s32": 37.04,
+        "b32": 3.7,
+        "s64": 11.11,
+        "f32": 31.48
+      },
+      "functional_split": {
+        "compute": 33,
+        "memory": 12,
+        "overhead": 14
+      },
+      "functional_split_pct": {
+        "compute": 55.9,
+        "memory": 20.3,
+        "overhead": 23.7
+      },
+      "memory_access_counts": {
+        "ld_global": 5,
+        "st_global": 5,
+        "ld_shared": 0,
+        "st_shared": 0,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 4,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 4
+        }
+      },
+      "l2_pressure_score": 10,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 0.0,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 5,
+        "setp_count": 5
+      },
+      "special_register_uses": 4,
+      "special_register_types": {
+        "%ntid": 1,
+        "%ctaid": 1,
+        "%tid": 1,
+        "%nctaid": 1
+      },
+      "domain_scores": {
+        "AI_TRAINING": 20
+      },
+      "domains": [
+        "AI_TRAINING"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "AI_TRAINING",
+          20
+        ]
+      ],
+      "regex_domain": "AI_TRAINING",
+      "llm_domain": "AI_TRAINING",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 28,
+      "memory_ops": 10,
+      "arithmetic_intensity": 2.8,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00018_unrolled_loop_optimization_base.ptx",
+      "path": "../raw/00018_unrolled_loop_optimization_base.ptx",
+      "size_kb": 7.9,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z22matmul_unrolled_kernelPKfS0_Pfi"
+      ],
+      "total_virtual_regs": 181,
+      "max_vreg_per_kernel": 111,
+      "mean_vreg_per_kernel": 45.2,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 170,
+      "instruction_category_counts": {
+        "load_store": 73,
+        "data_movement": 12,
+        "logic_shift": 11,
+        "integer_arith": 24,
+        "comparison": 8,
+        "control_flow": 5,
+        "conversion": 3,
+        "synchronization": 2,
+        "float_arith": 32
+      },
+      "top20_opcodes": {
+        "ld.shared.f32": 64,
+        "fma.rn.ftz.f32": 32,
+        "add.s32": 14,
+        "mov.u32": 7,
+        "setp.ge.s32": 6,
+        "shl.b32": 5,
+        "mov.f32": 5,
+        "bra": 5,
+        "add.s64": 4,
+        "ld.param.u64": 3,
+        "mad.lo.s32": 3,
+        "cvta.to.global.u64": 3,
+        "mul.wide.s32": 3,
+        "or.pred": 3,
+        "setp.lt.s32": 2,
+        "shr.s32": 2,
+        "ld.global.nc.f32": 2,
+        "st.shared.f32": 2,
+        "bar.sync": 2,
+        "ld.param.u32": 1
+      },
+      "unique_opcodes": 22,
+      "opcode_histogram": {
+        "ld.param.u64": 3,
+        "ld.param.u32": 1,
+        "mov.u32": 7,
+        "shl.b32": 5,
+        "add.s32": 14,
+        "setp.lt.s32": 2,
+        "mov.f32": 5,
+        "bra": 5,
+        "mad.lo.s32": 3,
+        "cvta.to.global.u64": 3,
+        "mul.wide.s32": 3,
+        "add.s64": 4,
+        "shr.s32": 2,
+        "shr.u32": 1,
+        "setp.ge.s32": 6,
+        "or.pred": 3,
+        "ld.global.nc.f32": 2,
+        "st.shared.f32": 2,
+        "bar.sync": 2,
+        "ld.shared.f32": 64,
+        "fma.rn.ftz.f32": 32,
+        "st.global.f32": 1
+      },
+      "precision_counts": {
+        "u64": 6,
+        "u32": 9,
+        "b32": 5,
+        "s32": 30,
+        "f32": 106,
+        "s64": 4,
+        "pred": 3
+      },
+      "precision_pct": {
+        "u64": 3.68,
+        "u32": 5.52,
+        "b32": 3.07,
+        "s32": 18.4,
+        "f32": 65.03,
+        "s64": 2.45,
+        "pred": 1.84
+      },
+      "functional_split": {
+        "compute": 64,
+        "memory": 73,
+        "overhead": 33
+      },
+      "functional_split_pct": {
+        "compute": 37.6,
+        "memory": 42.9,
+        "overhead": 19.4
+      },
+      "memory_access_counts": {
+        "ld_global": 2,
+        "st_global": 1,
+        "ld_shared": 64,
+        "st_shared": 2,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 2,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 3
+        }
+      },
+      "l2_pressure_score": 3,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 22.0,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 5,
+        "setp_count": 8
+      },
+      "special_register_uses": 4,
+      "special_register_types": {
+        "%ctaid": 2,
+        "%tid": 2
+      },
+      "domain_scores": {
+        "AI_TRAINING": 96,
+        "GRAPHICS_RENDERING": 9
+      },
+      "domains": [
+        "AI_TRAINING",
+        "GRAPHICS_RENDERING"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "AI_TRAINING",
+          96
+        ],
+        [
+          "GRAPHICS_RENDERING",
+          9
+        ]
+      ],
+      "regex_domain": "AI_TRAINING",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 56,
+      "memory_ops": 69,
+      "arithmetic_intensity": 0.812,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00019_memory_coalescing_optimization_base_base.ptx",
+      "path": "../raw/00019_memory_coalescing_optimization_base_base.ptx",
+      "size_kb": 5.66,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 2,
+      "kernel_names": [
+        "_Z15relu_activationPfi",
+        "_Z12linear_layerPfPKfS1_S_iii"
+      ],
+      "total_virtual_regs": 124,
+      "max_vreg_per_kernel": 33,
+      "mean_vreg_per_kernel": 15.5,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 99,
+      "instruction_category_counts": {
+        "load_store": 23,
+        "data_movement": 16,
+        "integer_arith": 33,
+        "comparison": 8,
+        "control_flow": 7,
+        "conversion": 5,
+        "logic_shift": 2,
+        "float_arith": 5
+      },
+      "top20_opcodes": {
+        "ld.global.f32": 12,
+        "mov.u32": 11,
+        "add.s64": 11,
+        "bra": 7,
+        "mul.wide.s32": 7,
+        "mad.lo.s32": 6,
+        "ld.param.u64": 5,
+        "cvta.to.global.u64": 5,
+        "fma.rn.ftz.f32": 5,
+        "ld.param.u32": 4,
+        "mov.f32": 4,
+        "add.s32": 4,
+        "setp.ge.s32": 3,
+        "st.global.f32": 2,
+        "mul.lo.s32": 2,
+        "setp.ne.s32": 2,
+        "max.ftz.f32": 1,
+        "or.pred": 1,
+        "setp.lt.s32": 1,
+        "and.b32": 1
+      },
+      "unique_opcodes": 25,
+      "opcode_histogram": {
+        "ld.param.u64": 5,
+        "ld.param.u32": 4,
+        "mov.u32": 11,
+        "mad.lo.s32": 6,
+        "setp.ge.s32": 3,
+        "bra": 7,
+        "cvta.to.global.u64": 5,
+        "mul.wide.s32": 7,
+        "add.s64": 11,
+        "ld.global.f32": 12,
+        "mov.f32": 4,
+        "max.ftz.f32": 1,
+        "st.global.f32": 2,
+        "or.pred": 1,
+        "setp.lt.s32": 1,
+        "add.s32": 4,
+        "and.b32": 1,
+        "setp.lt.u32": 1,
+        "sub.s32": 1,
+        "mul.lo.s32": 2,
+        "mov.u64": 1,
+        "fma.rn.ftz.f32": 5,
+        "setp.ne.s32": 2,
+        "setp.eq.s32": 1,
+        "add.ftz.f32": 1
+      },
+      "precision_counts": {
+        "u64": 11,
+        "u32": 16,
+        "s32": 27,
+        "s64": 11,
+        "f32": 25,
+        "pred": 1,
+        "b32": 1
+      },
+      "precision_pct": {
+        "u64": 11.96,
+        "u32": 17.39,
+        "s32": 29.35,
+        "s64": 11.96,
+        "f32": 27.17,
+        "pred": 1.09,
+        "b32": 1.09
+      },
+      "functional_split": {
+        "compute": 46,
+        "memory": 23,
+        "overhead": 30
+      },
+      "functional_split_pct": {
+        "compute": 46.5,
+        "memory": 23.2,
+        "overhead": 30.3
+      },
+      "memory_access_counts": {
+        "ld_global": 12,
+        "st_global": 2,
+        "ld_shared": 0,
+        "st_shared": 0,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 7,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 7
+        }
+      },
+      "l2_pressure_score": 14,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 0.0,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 7,
+        "setp_count": 8
+      },
+      "special_register_uses": 9,
+      "special_register_types": {
+        "%ctaid": 3,
+        "%ntid": 3,
+        "%tid": 3
+      },
+      "domain_scores": {
+        "AI_TRAINING": 19,
+        "GRAPHICS_RENDERING": 9,
+        "HPC_STENCIL": 12
+      },
+      "domains": [
+        "AI_TRAINING",
+        "HPC_STENCIL",
+        "GRAPHICS_RENDERING"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "AI_TRAINING",
+          19
+        ],
+        [
+          "HPC_STENCIL",
+          12
+        ],
+        [
+          "GRAPHICS_RENDERING",
+          9
+        ]
+      ],
+      "regex_domain": "AI_TRAINING",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 38,
+      "memory_ops": 14,
+      "arithmetic_intensity": 2.714,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00019_warp_reduction_optimized_base.ptx",
+      "path": "../raw/00019_warp_reduction_optimized_base.ptx",
+      "size_kb": 14.33,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z25matmul_warp_reduce_kernelPKfS0_Pfi"
+      ],
+      "total_virtual_regs": 424,
+      "max_vreg_per_kernel": 241,
+      "mean_vreg_per_kernel": 106.0,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 418,
+      "instruction_category_counts": {
+        "load_store": 35,
+        "conversion": 3,
+        "data_movement": 54,
+        "logic_shift": 90,
+        "integer_arith": 158,
+        "comparison": 47,
+        "control_flow": 29,
+        "synchronization": 2
+      },
+      "top20_opcodes": {
+        "add.s32": 85,
+        "setp.ge.s32": 30,
+        "shr.s32": 29,
+        "bra": 29,
+        "mov.u32": 23,
+        "and.b32": 17,
+        "sub.s32": 17,
+        "shr.u32": 16,
+        "mov.f32": 16,
+        "or.pred": 16,
+        "mul.wide.s32": 15,
+        "add.s64": 15,
+        "ld.global.nc.f32": 14,
+        "st.shared.f32": 14,
+        "mad.lo.s32": 13,
+        "shl.b32": 12,
+        "mov.b32": 10,
+        "setp.eq.s32": 7,
+        "add.ftz.f32": 6,
+        "shfl.sync.down.b32": 5
+      },
+      "unique_opcodes": 34,
+      "opcode_histogram": {
+        "ld.param.u64": 3,
+        "ld.param.u32": 1,
+        "cvta.to.global.u64": 3,
+        "mov.u32": 23,
+        "shr.s32": 29,
+        "shr.u32": 16,
+        "add.s32": 85,
+        "and.b32": 17,
+        "sub.s32": 17,
+        "shl.b32": 12,
+        "setp.lt.s32": 4,
+        "mov.f32": 16,
+        "bra": 29,
+        "mad.lo.s32": 13,
+        "mul.lo.s32": 4,
+        "div.u32": 2,
+        "setp.gt.s32": 2,
+        "setp.eq.s32": 7,
+        "setp.ge.s32": 30,
+        "or.pred": 16,
+        "mul.wide.s32": 15,
+        "add.s64": 15,
+        "ld.global.nc.f32": 14,
+        "st.shared.f32": 14,
+        "setp.lt.u32": 2,
+        "bar.sync": 2,
+        "ld.shared.f32": 2,
+        "mul.ftz.f32": 1,
+        "mov.b32": 10,
+        "shfl.sync.down.b32": 5,
+        "add.ftz.f32": 6,
+        "selp.f32": 1,
+        "setp.ne.s32": 1,
+        "st.global.f32": 1
+      },
+      "precision_counts": {
+        "u64": 6,
+        "u32": 44,
+        "s32": 207,
+        "b32": 44,
+        "f32": 55,
+        "pred": 16,
+        "s64": 15
+      },
+      "precision_pct": {
+        "u64": 1.55,
+        "u32": 11.37,
+        "s32": 53.49,
+        "b32": 11.37,
+        "f32": 14.21,
+        "pred": 4.13,
+        "s64": 3.88
+      },
+      "functional_split": {
+        "compute": 205,
+        "memory": 35,
+        "overhead": 178
+      },
+      "functional_split_pct": {
+        "compute": 49.0,
+        "memory": 8.4,
+        "overhead": 42.6
+      },
+      "memory_access_counts": {
+        "ld_global": 14,
+        "st_global": 1,
+        "ld_shared": 2,
+        "st_shared": 14,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 15,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 15
+        }
+      },
+      "l2_pressure_score": 15,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 1.067,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 29,
+        "setp_count": 46
+      },
+      "special_register_uses": 6,
+      "special_register_types": {
+        "%tid": 2,
+        "%ctaid": 2,
+        "%ntid": 2
+      },
+      "domain_scores": {
+        "AI_INFERENCE": 15,
+        "AI_LLM": 25,
+        "GRAPHICS_RENDERING": 9,
+        "HPC_STENCIL": 18,
+        "HPC_REDUCTION": 100,
+        "CRYPTOGRAPHY": 135
+      },
+      "domains": [
+        "CRYPTOGRAPHY",
+        "HPC_REDUCTION",
+        "AI_LLM",
+        "HPC_STENCIL",
+        "AI_INFERENCE",
+        "GRAPHICS_RENDERING"
+      ],
+      "primary_domain": "CRYPTOGRAPHY",
+      "top3_domains": [
+        [
+          "CRYPTOGRAPHY",
+          135
+        ],
+        [
+          "HPC_REDUCTION",
+          100
+        ],
+        [
+          "AI_LLM",
+          25
+        ]
+      ],
+      "regex_domain": "CRYPTOGRAPHY",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "Security / Crypto",
+      "compute_ops": 158,
+      "memory_ops": 31,
+      "arithmetic_intensity": 5.097,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00020_1_mlp_optimized_tiling_base_base.ptx",
+      "path": "../raw/00020_1_mlp_optimized_tiling_base_base.ptx",
+      "size_kb": 8.61,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z24fused_linear_relu_kernelPKfS0_S0_Pfiii"
+      ],
+      "total_virtual_regs": 188,
+      "max_vreg_per_kernel": 114,
+      "mean_vreg_per_kernel": 47.0,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 177,
+      "instruction_category_counts": {
+        "load_store": 77,
+        "data_movement": 12,
+        "logic_shift": 10,
+        "integer_arith": 27,
+        "comparison": 8,
+        "control_flow": 5,
+        "conversion": 4,
+        "synchronization": 2,
+        "float_arith": 32
+      },
+      "top20_opcodes": {
+        "ld.shared.f32": 64,
+        "fma.rn.ftz.f32": 32,
+        "add.s32": 12,
+        "mov.u32": 7,
+        "add.s64": 6,
+        "setp.ge.s32": 6,
+        "mov.f32": 5,
+        "bra": 5,
+        "ld.param.u64": 4,
+        "shl.b32": 4,
+        "cvta.to.global.u64": 4,
+        "mul.wide.s32": 4,
+        "ld.param.u32": 3,
+        "mad.lo.s32": 3,
+        "or.pred": 3,
+        "ld.global.nc.f32": 3,
+        "setp.lt.s32": 2,
+        "shr.s32": 2,
+        "st.shared.f32": 2,
+        "bar.sync": 2
+      },
+      "unique_opcodes": 24,
+      "opcode_histogram": {
+        "ld.param.u64": 4,
+        "ld.param.u32": 3,
+        "mov.u32": 7,
+        "shl.b32": 4,
+        "add.s32": 12,
+        "setp.lt.s32": 2,
+        "mov.f32": 5,
+        "bra": 5,
+        "mad.lo.s32": 3,
+        "cvta.to.global.u64": 4,
+        "mul.wide.s32": 4,
+        "add.s64": 6,
+        "shr.s32": 2,
+        "shr.u32": 1,
+        "setp.ge.s32": 6,
+        "or.pred": 3,
+        "ld.global.nc.f32": 3,
+        "st.shared.f32": 2,
+        "bar.sync": 2,
+        "ld.shared.f32": 64,
+        "fma.rn.ftz.f32": 32,
+        "add.ftz.f32": 1,
+        "max.ftz.f32": 1,
+        "st.global.f32": 1
+      },
+      "precision_counts": {
+        "u64": 8,
+        "u32": 11,
+        "b32": 4,
+        "s32": 29,
+        "f32": 109,
+        "s64": 6,
+        "pred": 3
+      },
+      "precision_pct": {
+        "u64": 4.71,
+        "u32": 6.47,
+        "b32": 2.35,
+        "s32": 17.06,
+        "f32": 64.12,
+        "s64": 3.53,
+        "pred": 1.76
+      },
+      "functional_split": {
+        "compute": 67,
+        "memory": 77,
+        "overhead": 33
+      },
+      "functional_split_pct": {
+        "compute": 37.9,
+        "memory": 43.5,
+        "overhead": 18.6
+      },
+      "memory_access_counts": {
+        "ld_global": 3,
+        "st_global": 1,
+        "ld_shared": 64,
+        "st_shared": 2,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 3,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 4
+        }
+      },
+      "l2_pressure_score": 4,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 16.5,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 5,
+        "setp_count": 8
+      },
+      "special_register_uses": 4,
+      "special_register_types": {
+        "%ctaid": 2,
+        "%tid": 2
+      },
+      "domain_scores": {
+        "AI_TRAINING": 100,
+        "GRAPHICS_RENDERING": 9
+      },
+      "domains": [
+        "AI_TRAINING",
+        "GRAPHICS_RENDERING"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "AI_TRAINING",
+          100
+        ],
+        [
+          "GRAPHICS_RENDERING",
+          9
+        ]
+      ],
+      "regex_domain": "AI_TRAINING",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 59,
+      "memory_ops": 70,
+      "arithmetic_intensity": 0.843,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00020_k_partition_atomic_optimization_base.ptx",
+      "path": "../raw/00020_k_partition_atomic_optimization_base.ptx",
+      "size_kb": 7.79,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z32matmul_k_partition_atomic_kernelPKfS0_Pfi"
+      ],
+      "total_virtual_regs": 158,
+      "max_vreg_per_kernel": 106,
+      "mean_vreg_per_kernel": 39.5,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 156,
+      "instruction_category_counts": {
+        "load_store": 74,
+        "data_movement": 10,
+        "logic_shift": 7,
+        "integer_arith": 18,
+        "comparison": 4,
+        "control_flow": 6,
+        "conversion": 3,
+        "synchronization": 1,
+        "float_arith": 32,
+        "atomic": 1
+      },
+      "top20_opcodes": {
+        "ld.shared.f32": 64,
+        "fma.rn.ftz.f32": 32,
+        "add.s32": 9,
+        "mov.u32": 8,
+        "shl.b32": 5,
+        "bra": 4,
+        "ld.param.u64": 3,
+        "mad.lo.s32": 3,
+        "cvta.to.global.u64": 3,
+        "mul.wide.s32": 3,
+        "add.s64": 3,
+        "setp.lt.s32": 2,
+        "bra.uni": 2,
+        "setp.ge.s32": 2,
+        "mov.f32": 2,
+        "ld.global.nc.f32": 2,
+        "st.shared.f32": 2,
+        "st.shared.u32": 2,
+        "ld.param.u32": 1,
+        "and.pred": 1
+      },
+      "unique_opcodes": 23,
+      "opcode_histogram": {
+        "ld.param.u64": 3,
+        "ld.param.u32": 1,
+        "mov.u32": 8,
+        "shl.b32": 5,
+        "add.s32": 9,
+        "setp.lt.s32": 2,
+        "and.pred": 1,
+        "bra": 4,
+        "bra.uni": 2,
+        "setp.ge.s32": 2,
+        "mov.f32": 2,
+        "mad.lo.s32": 3,
+        "cvta.to.global.u64": 3,
+        "mul.wide.s32": 3,
+        "add.s64": 3,
+        "ld.global.nc.f32": 2,
+        "st.shared.f32": 2,
+        "st.shared.u32": 2,
+        "bar.sync": 1,
+        "ld.shared.f32": 64,
+        "fma.rn.ftz.f32": 32,
+        "not.pred": 1,
+        "atom.global.add.f32": 1
+      },
+      "precision_counts": {
+        "u64": 6,
+        "u32": 11,
+        "b32": 5,
+        "s32": 19,
+        "pred": 2,
+        "f32": 103,
+        "s64": 3
+      },
+      "precision_pct": {
+        "u64": 4.03,
+        "u32": 7.38,
+        "b32": 3.36,
+        "s32": 12.75,
+        "pred": 1.34,
+        "f32": 69.13,
+        "s64": 2.01
+      },
+      "functional_split": {
+        "compute": 54,
+        "memory": 75,
+        "overhead": 27
+      },
+      "functional_split_pct": {
+        "compute": 34.6,
+        "memory": 48.1,
+        "overhead": 17.3
+      },
+      "memory_access_counts": {
+        "ld_global": 2,
+        "st_global": 0,
+        "ld_shared": 64,
+        "st_shared": 4,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 1,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 2,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 3
+        }
+      },
+      "l2_pressure_score": 6,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 34.0,
+      "atomic_density_per1k": 6.41,
+      "warp_divergence": {
+        "predicated_branches": 4,
+        "setp_count": 4
+      },
+      "special_register_uses": 5,
+      "special_register_types": {
+        "%ctaid": 3,
+        "%tid": 2
+      },
+      "domain_scores": {
+        "AI_TRAINING": 100,
+        "GRAPHICS_RENDERING": 9,
+        "PHYSICS_SIMULATION": 13,
+        "HPC_STENCIL": 12
+      },
+      "domains": [
+        "AI_TRAINING",
+        "PHYSICS_SIMULATION",
+        "HPC_STENCIL",
+        "GRAPHICS_RENDERING"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "AI_TRAINING",
+          100
+        ],
+        [
+          "PHYSICS_SIMULATION",
+          13
+        ],
+        [
+          "HPC_STENCIL",
+          12
+        ]
+      ],
+      "regex_domain": "AI_TRAINING",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 50,
+      "memory_ops": 70,
+      "arithmetic_intensity": 0.714,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00020_warp_aligned_conv2d_relu_bias_base.ptx",
+      "path": "../raw/00020_warp_aligned_conv2d_relu_bias_base.ptx",
+      "size_kb": 8.41,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z36warp_aligned_conv2d_relu_bias_kernelPKfS0_S0_S0_Pfiiiiiiiiii"
+      ],
+      "total_virtual_regs": 167,
+      "max_vreg_per_kernel": 68,
+      "mean_vreg_per_kernel": 41.8,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 146,
+      "instruction_category_counts": {
+        "load_store": 31,
+        "conversion": 11,
+        "data_movement": 11,
+        "logic_shift": 11,
+        "integer_arith": 48,
+        "comparison": 14,
+        "control_flow": 12,
+        "float_arith": 8
+      },
+      "top20_opcodes": {
+        "ld.global.nc.f32": 16,
+        "add.s64": 13,
+        "bra": 12,
+        "mul.lo.s32": 11,
+        "add.s32": 11,
+        "mov.u32": 10,
+        "ld.param.u32": 9,
+        "fma.rn.ftz.f32": 8,
+        "setp.lt.s32": 6,
+        "ld.param.u64": 5,
+        "cvta.to.global.u64": 5,
+        "cvt.s64.s32": 5,
+        "shl.b64": 5,
+        "mul.wide.s32": 4,
+        "and.b32": 3,
+        "div.s32": 3,
+        "setp.eq.s32": 3,
+        "mad.lo.s32": 2,
+        "sub.s32": 2,
+        "rem.s32": 2
+      },
+      "unique_opcodes": 31,
+      "opcode_histogram": {
+        "ld.param.u64": 5,
+        "ld.param.u32": 9,
+        "cvta.to.global.u64": 5,
+        "mov.u32": 10,
+        "and.b32": 3,
+        "shr.u32": 1,
+        "shl.b32": 1,
+        "mad.lo.s32": 2,
+        "or.b32": 1,
+        "setp.ge.s32": 1,
+        "bra": 12,
+        "mul.lo.s32": 11,
+        "add.s32": 11,
+        "sub.s32": 2,
+        "div.s32": 3,
+        "rem.s32": 2,
+        "cvt.s64.s32": 5,
+        "mul.wide.s32": 4,
+        "add.s64": 13,
+        "ld.global.nc.f32": 16,
+        "setp.lt.s32": 6,
+        "cvt.u32.u64": 1,
+        "shl.b64": 5,
+        "setp.lt.u32": 1,
+        "mov.u64": 1,
+        "fma.rn.ftz.f32": 8,
+        "setp.ne.s32": 1,
+        "setp.eq.s32": 3,
+        "setp.gt.ftz.f32": 1,
+        "selp.f32": 1,
+        "st.global.f32": 1
+      },
+      "precision_counts": {
+        "u64": 11,
+        "u32": 22,
+        "b32": 5,
+        "s32": 51,
+        "s64": 13,
+        "f32": 27,
+        "b64": 5
+      },
+      "precision_pct": {
+        "u64": 8.21,
+        "u32": 16.42,
+        "b32": 3.73,
+        "s32": 38.06,
+        "s64": 9.7,
+        "f32": 20.15,
+        "b64": 3.73
+      },
+      "functional_split": {
+        "compute": 70,
+        "memory": 31,
+        "overhead": 45
+      },
+      "functional_split_pct": {
+        "compute": 47.9,
+        "memory": 21.2,
+        "overhead": 30.8
+      },
+      "memory_access_counts": {
+        "ld_global": 16,
+        "st_global": 1,
+        "ld_shared": 0,
+        "st_shared": 0,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 4,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 4
+        }
+      },
+      "l2_pressure_score": 17,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 0.0,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 12,
+        "setp_count": 13
+      },
+      "special_register_uses": 4,
+      "special_register_types": {
+        "%tid": 1,
+        "%ntid": 1,
+        "%ctaid": 1,
+        "%nctaid": 1
+      },
+      "domain_scores": {
+        "AI_TRAINING": 24,
+        "HPC_STENCIL": 16
+      },
+      "domains": [
+        "AI_TRAINING",
+        "HPC_STENCIL"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "AI_TRAINING",
+          24
+        ],
+        [
+          "HPC_STENCIL",
+          16
+        ]
+      ],
+      "regex_domain": "AI_TRAINING",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 56,
+      "memory_ops": 17,
+      "arithmetic_intensity": 3.294,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00021_fused_linear_relu_balanced_base.ptx",
+      "path": "../raw/00021_fused_linear_relu_balanced_base.ptx",
+      "size_kb": 9.37,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z25fused_linear_layer_kernelPKfPfS0_S0_iiib"
+      ],
+      "total_virtual_regs": 230,
+      "max_vreg_per_kernel": 80,
+      "mean_vreg_per_kernel": 46.0,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 220,
+      "instruction_category_counts": {
+        "load_store": 44,
+        "conversion": 4,
+        "data_movement": 13,
+        "integer_arith": 110,
+        "comparison": 18,
+        "control_flow": 21,
+        "logic_shift": 3,
+        "float_arith": 7
+      },
+      "top20_opcodes": {
+        "add.s64": 28,
+        "ld.global.nc.f32": 25,
+        "add.s32": 22,
+        "mul.wide.s32": 22,
+        "bra": 18,
+        "add.ftz.f32": 11,
+        "st.global.f32": 11,
+        "rem.s32": 10,
+        "mov.u32": 7,
+        "fma.rn.ftz.f32": 7,
+        "max.ftz.f32": 6,
+        "mul.lo.s32": 5,
+        "mov.f32": 5,
+        "setp.eq.s32": 5,
+        "ld.param.u64": 4,
+        "cvta.to.global.u64": 4,
+        "ld.param.u32": 3,
+        "bra.uni": 3,
+        "setp.lt.u32": 3,
+        "setp.ne.s32": 3
+      },
+      "unique_opcodes": 32,
+      "opcode_histogram": {
+        "ld.param.u8": 1,
+        "ld.param.u64": 4,
+        "ld.param.u32": 3,
+        "cvta.to.global.u64": 4,
+        "mov.u32": 7,
+        "mad.lo.s32": 2,
+        "mul.lo.s32": 5,
+        "setp.ge.s32": 1,
+        "bra": 18,
+        "setp.gt.s32": 1,
+        "bra.uni": 3,
+        "add.s32": 22,
+        "and.b32": 2,
+        "sub.s32": 2,
+        "div.s32": 1,
+        "setp.lt.u32": 3,
+        "mov.f32": 5,
+        "mul.wide.s32": 22,
+        "add.s64": 28,
+        "mov.u64": 1,
+        "ld.global.nc.f32": 25,
+        "fma.rn.ftz.f32": 7,
+        "setp.ne.s32": 3,
+        "setp.eq.s32": 5,
+        "add.ftz.f32": 11,
+        "setp.eq.s16": 2,
+        "max.ftz.f32": 6,
+        "st.global.f32": 11,
+        "setp.lt.s32": 3,
+        "not.b32": 1,
+        "div.u32": 1,
+        "rem.s32": 10
+      },
+      "precision_counts": {
+        "u8": 1,
+        "u64": 9,
+        "u32": 14,
+        "s32": 77,
+        "b32": 3,
+        "f32": 65,
+        "s64": 28,
+        "s16": 2
+      },
+      "precision_pct": {
+        "u8": 0.5,
+        "u64": 4.52,
+        "u32": 7.04,
+        "s32": 38.69,
+        "b32": 1.51,
+        "f32": 32.66,
+        "s64": 14.07,
+        "s16": 1.01
+      },
+      "functional_split": {
+        "compute": 135,
+        "memory": 44,
+        "overhead": 41
+      },
+      "functional_split_pct": {
+        "compute": 61.4,
+        "memory": 20.0,
+        "overhead": 18.6
+      },
+      "memory_access_counts": {
+        "ld_global": 25,
+        "st_global": 11,
+        "ld_shared": 0,
+        "st_shared": 0,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 22,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 22
+        }
+      },
+      "l2_pressure_score": 36,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 0.0,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 18,
+        "setp_count": 18
+      },
+      "special_register_uses": 4,
+      "special_register_types": {
+        "%ntid": 1,
+        "%ctaid": 1,
+        "%tid": 1,
+        "%nctaid": 1
+      },
+      "domain_scores": {
+        "AI_TRAINING": 45,
+        "AI_INFERENCE": 8,
+        "HPC_STENCIL": 25,
+        "IMAGE_PROCESSING": 12,
+        "VIDEO_CODEC": 8
+      },
+      "domains": [
+        "AI_TRAINING",
+        "HPC_STENCIL",
+        "IMAGE_PROCESSING",
+        "AI_INFERENCE",
+        "VIDEO_CODEC"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "AI_TRAINING",
+          45
+        ],
+        [
+          "HPC_STENCIL",
+          25
+        ],
+        [
+          "IMAGE_PROCESSING",
+          12
+        ]
+      ],
+      "regex_domain": "AI_TRAINING",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 117,
+      "memory_ops": 36,
+      "arithmetic_intensity": 3.25,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00021_memory_access_optimization_base_base.ptx",
+      "path": "../raw/00021_memory_access_optimization_base_base.ptx",
+      "size_kb": 8.04,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z30matmul_memory_optimized_kernelPKfS0_Pfi"
+      ],
+      "total_virtual_regs": 178,
+      "max_vreg_per_kernel": 113,
+      "mean_vreg_per_kernel": 44.5,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 166,
+      "instruction_category_counts": {
+        "load_store": 73,
+        "data_movement": 12,
+        "logic_shift": 9,
+        "integer_arith": 24,
+        "comparison": 6,
+        "control_flow": 7,
+        "synchronization": 2,
+        "float_arith": 32,
+        "conversion": 1
+      },
+      "top20_opcodes": {
+        "ld.shared.f32": 64,
+        "fma.rn.ftz.f32": 32,
+        "add.s32": 14,
+        "mov.u32": 7,
+        "shl.b32": 5,
+        "bra": 5,
+        "mov.f32": 5,
+        "setp.ge.s32": 4,
+        "add.s64": 4,
+        "ld.param.u64": 3,
+        "mad.lo.s32": 3,
+        "mul.wide.s32": 3,
+        "bra.uni": 2,
+        "shr.s32": 2,
+        "ld.global.nc.f32": 2,
+        "st.shared.f32": 2,
+        "bar.sync": 2,
+        "ld.param.u32": 1,
+        "or.pred": 1,
+        "setp.gt.s32": 1
+      },
+      "unique_opcodes": 24,
+      "opcode_histogram": {
+        "ld.param.u64": 3,
+        "ld.param.u32": 1,
+        "mov.u32": 7,
+        "shl.b32": 5,
+        "add.s32": 14,
+        "setp.ge.s32": 4,
+        "or.pred": 1,
+        "bra": 5,
+        "setp.gt.s32": 1,
+        "bra.uni": 2,
+        "mad.lo.s32": 3,
+        "mul.wide.s32": 3,
+        "add.s64": 4,
+        "shr.s32": 2,
+        "shr.u32": 1,
+        "mov.f32": 5,
+        "ld.global.nc.f32": 2,
+        "st.shared.f32": 2,
+        "bar.sync": 2,
+        "ld.shared.f32": 64,
+        "fma.rn.ftz.f32": 32,
+        "setp.lt.s32": 1,
+        "cvta.to.global.u64": 1,
+        "st.global.f32": 1
+      },
+      "precision_counts": {
+        "u64": 4,
+        "u32": 9,
+        "b32": 5,
+        "s32": 28,
+        "pred": 1,
+        "s64": 4,
+        "f32": 106
+      },
+      "precision_pct": {
+        "u64": 2.55,
+        "u32": 5.73,
+        "b32": 3.18,
+        "s32": 17.83,
+        "pred": 0.64,
+        "s64": 2.55,
+        "f32": 67.52
+      },
+      "functional_split": {
+        "compute": 62,
+        "memory": 73,
+        "overhead": 31
+      },
+      "functional_split_pct": {
+        "compute": 37.3,
+        "memory": 44.0,
+        "overhead": 18.7
+      },
+      "memory_access_counts": {
+        "ld_global": 2,
+        "st_global": 1,
+        "ld_shared": 64,
+        "st_shared": 2,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 0,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 3,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 3
+        }
+      },
+      "l2_pressure_score": 3,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 22.0,
+      "atomic_density_per1k": 0.0,
+      "warp_divergence": {
+        "predicated_branches": 5,
+        "setp_count": 6
+      },
+      "special_register_uses": 4,
+      "special_register_types": {
+        "%ctaid": 2,
+        "%tid": 2
+      },
+      "domain_scores": {
+        "AI_TRAINING": 96,
+        "GRAPHICS_RENDERING": 9
+      },
+      "domains": [
+        "AI_TRAINING",
+        "GRAPHICS_RENDERING"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "AI_TRAINING",
+          96
+        ],
+        [
+          "GRAPHICS_RENDERING",
+          9
+        ]
+      ],
+      "regex_domain": "AI_TRAINING",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 56,
+      "memory_ops": 69,
+      "arithmetic_intensity": 0.812,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00022_atomic_reduce_conv2d_relu_bias_base.ptx",
+      "path": "../raw/00022_atomic_reduce_conv2d_relu_bias_base.ptx",
+      "size_kb": 9.4,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 3,
+      "kernel_names": [
+        "_Z18init_output_kernelPfPKfiiii",
+        "_Z24accumulate_conv2d_kernelPKfS0_Pfiiiiiiiiii",
+        "_Z22finalize_output_kernelPfPKfiiii"
+      ],
+      "total_virtual_regs": 156,
+      "max_vreg_per_kernel": 66,
+      "mean_vreg_per_kernel": 13.0,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 153,
+      "instruction_category_counts": {
+        "load_store": 37,
+        "data_movement": 15,
+        "integer_arith": 63,
+        "comparison": 9,
+        "control_flow": 11,
+        "conversion": 7,
+        "logic_shift": 7,
+        "float_arith": 1,
+        "synchronization": 2,
+        "atomic": 1
+      },
+      "top20_opcodes": {
+        "ld.param.u32": 18,
+        "mov.u32": 12,
+        "mul.lo.s32": 12,
+        "add.s32": 11,
+        "bra": 9,
+        "div.s32": 9,
+        "ld.param.u64": 7,
+        "cvta.to.global.u64": 7,
+        "mul.wide.s32": 7,
+        "add.s64": 7,
+        "mad.lo.s32": 6,
+        "sub.s32": 5,
+        "ld.global.nc.f32": 4,
+        "setp.ge.s32": 3,
+        "shr.u32": 3,
+        "mov.f32": 3,
+        "ld.shared.f32": 3,
+        "rem.s32": 2,
+        "st.global.f32": 2,
+        "shr.s32": 2
+      },
+      "unique_opcodes": 34,
+      "opcode_histogram": {
+        "ld.param.u64": 7,
+        "ld.param.u32": 18,
+        "mov.u32": 12,
+        "mad.lo.s32": 6,
+        "setp.ge.s32": 3,
+        "bra": 9,
+        "cvta.to.global.u64": 7,
+        "div.s32": 9,
+        "rem.s32": 2,
+        "mul.wide.s32": 7,
+        "add.s64": 7,
+        "ld.global.nc.f32": 4,
+        "st.global.f32": 2,
+        "mul.lo.s32": 12,
+        "add.s32": 11,
+        "shr.s32": 2,
+        "shr.u32": 3,
+        "min.s32": 1,
+        "setp.lt.s32": 2,
+        "bra.uni": 2,
+        "sub.s32": 5,
+        "mov.f32": 3,
+        "fma.rn.ftz.f32": 1,
+        "shl.b32": 2,
+        "st.shared.f32": 2,
+        "bar.sync": 2,
+        "setp.eq.s32": 1,
+        "setp.ge.u32": 1,
+        "ld.shared.f32": 3,
+        "add.ftz.f32": 2,
+        "setp.ne.s32": 2,
+        "atom.global.add.f32": 1,
+        "ld.global.f32": 1,
+        "max.ftz.f32": 1
+      },
+      "precision_counts": {
+        "u64": 14,
+        "u32": 34,
+        "s32": 63,
+        "s64": 7,
+        "f32": 20,
+        "b32": 2
+      },
+      "precision_pct": {
+        "u64": 10.0,
+        "u32": 24.29,
+        "s32": 45.0,
+        "s64": 5.0,
+        "f32": 14.29,
+        "b32": 1.43
+      },
+      "functional_split": {
+        "compute": 73,
+        "memory": 38,
+        "overhead": 42
+      },
+      "functional_split_pct": {
+        "compute": 47.7,
+        "memory": 24.8,
+        "overhead": 27.5
+      },
+      "memory_access_counts": {
+        "ld_global": 5,
+        "st_global": 2,
+        "ld_shared": 3,
+        "st_shared": 2,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 1,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 6,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 7
+        }
+      },
+      "l2_pressure_score": 11,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 0.714,
+      "atomic_density_per1k": 6.54,
+      "warp_divergence": {
+        "predicated_branches": 9,
+        "setp_count": 9
+      },
+      "special_register_uses": 11,
+      "special_register_types": {
+        "%ctaid": 4,
+        "%ntid": 4,
+        "%tid": 3
+      },
+      "domain_scores": {
+        "AI_TRAINING": 11,
+        "HPC_STENCIL": 9
+      },
+      "domains": [
+        "AI_TRAINING",
+        "HPC_STENCIL"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "AI_TRAINING",
+          11
+        ],
+        [
+          "HPC_STENCIL",
+          9
+        ]
+      ],
+      "regex_domain": "AI_TRAINING",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 64,
+      "memory_ops": 12,
+      "arithmetic_intensity": 5.333,
+      "l2_contention_risk": "LOW"
+    },
+    {
+      "file": "00023_atomic_optimized_conv2d_relu_bias_base.ptx",
+      "path": "../raw/00023_atomic_optimized_conv2d_relu_bias_base.ptx",
+      "size_kb": 7.99,
+      "ptx_version": "8.5",
+      "sm_target": "sm_87",
+      "kernel_count": 1,
+      "kernel_names": [
+        "_Z40atomic_optimized_conv2d_relu_bias_kernelPKfS0_S0_S0_Pfiiiiiiiii"
+      ],
+      "total_virtual_regs": 152,
+      "max_vreg_per_kernel": 62,
+      "mean_vreg_per_kernel": 38.0,
+      "shared_mem_allocations": 0,
+      "shared_mem_total_bytes": 0,
+      "shared_mem_max_bytes": 0,
+      "total_static_instructions": 130,
+      "instruction_category_counts": {
+        "load_store": 30,
+        "conversion": 7,
+        "data_movement": 12,
+        "integer_arith": 47,
+        "comparison": 12,
+        "control_flow": 12,
+        "logic_shift": 2,
+        "float_arith": 7,
+        "atomic": 1
+      },
+      "top20_opcodes": {
+        "ld.global.nc.f32": 16,
+        "bra": 12,
+        "add.s32": 12,
+        "mov.u32": 10,
+        "ld.param.u32": 9,
+        "add.s64": 9,
+        "mul.lo.s32": 8,
+        "fma.rn.ftz.f32": 7,
+        "mul.wide.s32": 6,
+        "setp.lt.s32": 6,
+        "ld.param.u64": 5,
+        "cvta.to.global.u64": 5,
+        "mad.lo.s32": 3,
+        "div.s32": 3,
+        "rem.s32": 3,
+        "setp.eq.s32": 3,
+        "setp.ge.s32": 1,
+        "and.b32": 1,
+        "sub.s32": 1,
+        "cvt.s64.s32": 1
+      },
+      "unique_opcodes": 29,
+      "opcode_histogram": {
+        "ld.param.u64": 5,
+        "ld.param.u32": 9,
+        "cvta.to.global.u64": 5,
+        "mov.u32": 10,
+        "mad.lo.s32": 3,
+        "mul.lo.s32": 8,
+        "setp.ge.s32": 1,
+        "bra": 12,
+        "add.s32": 12,
+        "and.b32": 1,
+        "sub.s32": 1,
+        "div.s32": 3,
+        "rem.s32": 3,
+        "cvt.s64.s32": 1,
+        "mul.wide.s32": 6,
+        "add.s64": 9,
+        "ld.global.nc.f32": 16,
+        "setp.lt.s32": 6,
+        "cvt.u32.u64": 1,
+        "setp.lt.u32": 1,
+        "mov.u64": 1,
+        "fma.rn.ftz.f32": 7,
+        "setp.ne.s32": 1,
+        "setp.eq.s32": 3,
+        "shl.b64": 1,
+        "mov.f32": 1,
+        "max.ftz.f32": 1,
+        "add.ftz.f32": 1,
+        "atom.global.add.f32": 1
+      },
+      "precision_counts": {
+        "u64": 11,
+        "u32": 21,
+        "s32": 48,
+        "b32": 1,
+        "s64": 9,
+        "f32": 27,
+        "b64": 1
+      },
+      "precision_pct": {
+        "u64": 9.32,
+        "u32": 17.8,
+        "s32": 40.68,
+        "b32": 0.85,
+        "s64": 7.63,
+        "f32": 22.88,
+        "b64": 0.85
+      },
+      "functional_split": {
+        "compute": 66,
+        "memory": 31,
+        "overhead": 33
+      },
+      "functional_split_pct": {
+        "compute": 50.8,
+        "memory": 23.8,
+        "overhead": 25.4
+      },
+      "memory_access_counts": {
+        "ld_global": 16,
+        "st_global": 0,
+        "ld_shared": 0,
+        "st_shared": 0,
+        "ld_local": 0,
+        "st_local": 0,
+        "ld_const": 0,
+        "atom_global": 1,
+        "atom_shared": 0,
+        "red_global": 0,
+        "prefetch": 0,
+        "cp_async": 0,
+        "vector_ld": 0,
+        "vector_st": 0
+      },
+      "cache_modifier_counts": {},
+      "stride_analysis": {
+        "coalesced_patterns": 5,
+        "uncoalesced_patterns": 0,
+        "shared_bank_risk": 0,
+        "stride_values_histogram": {
+          "4": 6
+        }
+      },
+      "l2_pressure_score": 20,
+      "coalescing_ratio": 1.0,
+      "shared_to_global_ratio": 0.0,
+      "atomic_density_per1k": 7.69,
+      "warp_divergence": {
+        "predicated_branches": 12,
+        "setp_count": 12
+      },
+      "special_register_uses": 4,
+      "special_register_types": {
+        "%ntid": 1,
+        "%ctaid": 1,
+        "%tid": 1,
+        "%nctaid": 1
+      },
+      "domain_scores": {
+        "AI_TRAINING": 29,
+        "HPC_STENCIL": 16
+      },
+      "domains": [
+        "AI_TRAINING",
+        "HPC_STENCIL"
+      ],
+      "primary_domain": "AI_TRAINING",
+      "top3_domains": [
+        [
+          "AI_TRAINING",
+          29
+        ],
+        [
+          "HPC_STENCIL",
+          16
+        ]
+      ],
+      "regex_domain": "AI_TRAINING",
+      "llm_domain": "UNKNOWN",
+      "domain_group": "AI / Deep Learning",
+      "compute_ops": 54,
+      "memory_ops": 16,
+      "arithmetic_intensity": 3.375,
+      "l2_contention_risk": "LOW"
+    }
+  ]
+}

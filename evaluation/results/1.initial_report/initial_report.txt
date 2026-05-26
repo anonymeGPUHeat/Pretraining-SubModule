@@ -1,0 +1,93 @@
+  Stride:                    1920
+test dataset: 24,360 chunks
+test dataset: 24,360 chunks
+
+building token frequency map from test data ...
+  unique tokens seen: 6,703
+  total tokens counted: 802,905
+MLM DETAILED EVALUATION
+
+
+ stratified accuracy by token type :
+  type              top-1    top-5    count
+  -------------- -------- -------- --------
+  address          95.36%   98.64%      733
+  immediate        83.68%   92.19%     1293
+  modifier         96.09%   99.53%     5523
+  opcode           96.01%   99.23%     3488
+  other            89.55%   95.65%    16812
+  register         97.15%   99.69%     7377
+  structural       93.05%   97.02%    14279
+
+masked position difficulty buckets:
+  bucket        top-1    top-5    count
+  ---------- -------- -------- --------
+  high         97.23%   99.54%    38219
+  medium       79.67%   91.14%     6715
+  low          75.10%   87.46%     4571
+
+overall
+  total masked positions: 49505
+  top-1 accuracy:         0.9281
+  top-5 accuracy:         0.9729
+  saved MLM stratified chart to evaluation\results\mlm_stratified_accuracy.png
+  saved MLM bucket chart to evaluation\results\mlm_frequency_buckets.png
+ITC DETAILED EVALUATION
+
+
+confusion matrix (235,588 positions)
+                   GLOBAL_L GLOBAL_S SHARED_L SHARED_S LOCAL_LO LOCAL_ST ARITHMET LOGIC_BI COMPARIS CONTROL_ SYNC_BAR CONVERSI ATOMIC_R
+       GLOBAL_LOAD    16651        0        1        0        0        0        0        0        0        0        0        0        0
+      GLOBAL_STORE        0     4902        0        0        0        0        0        0        0        0        0        0        0
+       SHARED_LOAD        0        0    13189        0        0        0        0        0        0        0        0        0        0
+      SHARED_STORE        0        0        0     4835        0        0        0        0        0        0        0        0        0
+        LOCAL_LOAD        0        0        0        0     7530        0        0        0        0        0        0        0        0
+       LOCAL_STORE        0        0        0        0        0      819        0        0        0        0        0        0        0
+        ARITHMETIC        0        0        0        0        0        0    85893        0        0        0        0        0        0
+     LOGIC_BITWISE        0        0        0        0        0        0        0    26139        0        0        0        0        0
+        COMPARISON        0        0        0        0        0        0        0        0    29527        0        0        0        0
+      CONTROL_FLOW        0        0        0        0        0        0        0        0        0     9818        0        0        0
+      SYNC_BARRIER        0        0        0        0        0        0        0        0        0        0     1086        0        0
+   CONVERSION_MOVE        0        0        0        0        0        0        0        0        0        0        0    34312        0
+     ATOMIC_REDUCE        0        0        0        0        0        0        0        0        0        0        0        0      886
+
+--- per-class metrics ---
+  class                    prec   recall       F1  support
+  -------------------- -------- -------- -------- --------
+  GLOBAL_LOAD           100.00%   99.99%  100.00%    16652
+  GLOBAL_STORE          100.00%  100.00%  100.00%     4902
+  SHARED_LOAD            99.99%  100.00%  100.00%    13189
+  SHARED_STORE          100.00%  100.00%  100.00%     4835
+  LOCAL_LOAD            100.00%  100.00%  100.00%     7530
+  LOCAL_STORE           100.00%  100.00%  100.00%      819
+  ARITHMETIC            100.00%  100.00%  100.00%    85893
+  LOGIC_BITWISE         100.00%  100.00%  100.00%    26139
+  COMPARISON            100.00%  100.00%  100.00%    29527
+  CONTROL_FLOW          100.00%  100.00%  100.00%     9818
+  SYNC_BARRIER          100.00%  100.00%  100.00%     1086
+  CONVERSION_MOVE       100.00%  100.00%  100.00%    34312
+  ATOMIC_REDUCE         100.00%  100.00%  100.00%      886
+
+  overall accuracy:  1.0000
+  macro F1:          1.0000
+  weighted F1:       1.0000
+
+ rare vs common class accuracy:
+  common classes (120,205 tokens): 1.0000
+    classes: ARITHMETIC, CONVERSION_MOVE
+  rare classes   (115,383 tokens): 1.0000
+    classes: GLOBAL_LOAD, GLOBAL_STORE, SHARED_LOAD, SHARED_STORE, LOCAL_LOAD, LOCAL_STORE, LOGIC_BITWISE, COMPARISON, CONTROL_FLOW, SYNC_BARRIER, ATOMIC_REDUCE
+  saved confusion matrix to evaluation\results\itc_confusion_matrix.png
+  saved per-class F1 chart to evaluation\results\itc_per_class_f1.png
+REPORT SUMMARY
+
+  MLM top-1 accuracy:     0.9281
+  MLM top-5 accuracy:     0.9729
+  ITC overall accuracy:   1.0000
+  ITC macro F1:           1.0000
+  ITC weighted F1:        1.0000
+  ITC common-class acc:   1.0000
+  ITC rare-class acc:     1.0000
+
+  saved JSON report to evaluation\results\initial_report.json
+  saved plots to evaluation\results/

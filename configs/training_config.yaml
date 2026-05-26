@@ -1,0 +1,89 @@
+raw_data_dir: "./data/raw"
+processed_data_dir: "./data/processed"
+cache_dir: "./data/cache"
+splits_dir: "./data/splits"
+train_split: 0.85
+val_split: 0.10
+test_split: 0.05
+num_epochs: 100
+batch_size: 16
+gradient_accumulation_steps: 4
+effective_batch_size: 64  # batch_size * gradient_accumulation_steps
+optimizer: "adamw"
+learning_rate: 5e-5
+weight_decay: 0.01
+adam_beta1: 0.9
+adam_beta2: 0.999
+adam_epsilon: 1e-8
+max_grad_norm: 1.0
+lr_scheduler: "linear_warmup_cosine"
+warmup_steps: 10000
+warmup_ratio: 0.1
+objectives:
+  # Masked Instruction Modeling (MLM-like)
+  # Mask entire instructions and predict opcode + modifiers
+  masked_instruction_modeling:
+    enabled: true
+    weight: 1.1
+    mask_probability: 0.15
+    # Masking strategy: mask all tokens in an instruction
+    mask_full_instruction: true
+  
+  # Instruction Type Classification (ITC)
+  # Per-token classification of PTX instruction types (14 classes)
+  # Classes: GLOBAL_LOAD, GLOBAL_STORE, SHARED_LOAD, SHARED_STORE,
+  #          LOCAL_LOAD, LOCAL_STORE, ARITHMETIC, LOGIC_BITWISE,
+  #          COMPARISON, CONTROL_FLOW, SYNC_BARRIER, CONVERSION_MOVE,
+  #          ATOMIC_REDUCE, SPECIAL
+  # Non-instruction tokens (directives, labels, padding) get label -100 (ignored)
+  instruction_type_classification:
+    enabled: true
+    weight: 1.1
+    num_classes: 14
+    
+  # Operand Role Prediction
+  # Predict address space, type, or predication from context
+  operand_role_prediction:
+    enabled: false
+    weight: 0.5
+    mask_probability: 0.10
+    # Target types: address_space, data_type, predication
+    
+  # Structural Consistency
+  # Predict whether two spans are in same BB or loop
+  structural_consistency:
+    enabled: false
+    weight: 0.3
+    num_samples_per_sequence: 5
+    # Tasks: same_bb, same_loop, same_kernel
+
+# Masking configuration
+masking:
+  # Instruction-level masking
+  instruction_mask_prob: 0.15
+  
+  # Modifier-level masking (for operand role prediction)
+  modifier_mask_prob: 0.10
+  
+  # Structural token masking
+  structural_mask_prob: 0.05
+  
+  # Never mask these (critical for alignment)
+  never_mask:
+    - "<PAD>"
+    - "<BB_START>"  # Can mask BB tokens but with lower prob
+    - "<BB_END>"
+    - "<KERNEL_START>"
+    - "<KERNEL_END>"
+checkpoint_dir: "./checkpoints"
+save_steps: 5000
+save_total_limit: 5 
+logging_steps: 100
+eval_steps: 1000
+eval_accumulation_steps: 10
+device: "cuda"
+mixed_precision: "fp16"  
+dataloader_num_workers: 4
+pin_memory: true
+seed: 42
+deterministic: true

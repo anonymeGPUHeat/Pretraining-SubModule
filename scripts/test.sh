@@ -1,0 +1,1 @@
+>python -m evaluation.intrinsic_eval --checkpoint .\ptx_outputs_3epochs\checkpoints\best_model.pt --tokenizer .\model\tokenizer\tokenizer_16k_full\tokenizer_16k\ptx_tokenizer_16k.model --data-dir .\data\processed --cache-dir .\ptx_outputs_3epochs\cache --max-seq-length 2048 --max-samples 100

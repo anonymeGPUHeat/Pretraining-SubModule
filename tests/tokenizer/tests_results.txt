@@ -1,0 +1,25 @@
+COVERAGE STATISTICS
+Files in sample:             79,000
+Files processed:             78,487
+Files skipped (empty):       513
+Files skipped (errors):      0
+
+Total characters:            1,055,687,747
+Total tokens:                440,426,320
+Compression ratio:           2.40 chars/token
+Avg token length:            3.46 chars
+QUALITY METRICS
+
+1. UNKNOWN TOKEN RATE: 0.00%
+
+
+2. TOKENS PER FILE:
+   Average:  5611
+   Median:   1570
+   Min/Max:  1 / 2873453
+
+
+3. VOCABULARY COVERAGE: 100.00%
+
+4. ROUNDTRIP ACCURACY: 100.00%
+   Errors: 0 / 78487

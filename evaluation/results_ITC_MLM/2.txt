@@ -1,0 +1,49 @@
+DATASET STATISTICS
+  Split:                     TEST
+  Total files found:         79,070
+  Empty files removed:       514
+  Usable files:              78,556
+  Files in this split:       7,857
+  Files processed:           7,617
+  Files skipped (empty):     240
+  Files skipped (errors):    0
+  Total tokens:              38,403,925
+  Total chunks:              24,360
+  Avg chunks per file:       3.2
+  Max sequence length:       2048
+  Overlap:                   128
+  Stride:                    1920
+test dataset: 24,360 chunks
+using 7617 test snippets for masked recovery
+
+--- masked token recovery ---
+  snippets evaluated: 7617
+  masked positions:   1940005
+  top-1 accuracy:     0.8984 (1742814/1940005)
+  top-5 accuracy:     0.9548 (1852279/1940005)
+  extracted 120 labeled instructions for task 'address_space'
+  class distribution: {0: 30, 1: 30, 2: 30, 3: 30}
+  using 30 global + 30 shared snippets
+
+--- address space separation ---
+  inter-class cosine (global vs shared): 0.3338
+  intra-class cosine (global):           0.6728
+  intra-class cosine (shared):           0.7552
+  separation gap:                        0.7604
+  extracted 60 labeled instructions for task 'instruction_type'
+  class distribution: {0: 30, 1: 30}
+  using 30 memory + 30 compute snippets
+
+--- instruction type separation (memory vs compute) ---
+  cosine similarity: 0.4548  (lower = better)
+  memory samples:    30
+  compute samples:   30
+
+======================================================================
+intrinsic evaluation summary
+======================================================================
+  masked recovery top-1:     0.8984
+  masked recovery top-5:     0.9548
+  addr space inter-cosine:   0.3338
+  mem vs compute cosine:     0.4548
+======================================================================

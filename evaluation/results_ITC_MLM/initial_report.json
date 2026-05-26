@@ -1,0 +1,378 @@
+{
+  "mlm": {
+    "overall_top1": 0.9113639157836545,
+    "overall_top5": 0.9640795970123563,
+    "total_masked": 5896955,
+    "by_token_type": {
+      "address": {
+        "top1": 0.9463961269791115,
+        "top5": 0.9871689255526841,
+        "count": 88613
+      },
+      "immediate": {
+        "top1": 0.7782295782983029,
+        "top5": 0.8965694977378157,
+        "count": 157149
+      },
+      "modifier": {
+        "top1": 0.9608655361804838,
+        "top5": 0.9956067435101719,
+        "count": 649632
+      },
+      "opcode": {
+        "top1": 0.9557219533234294,
+        "top5": 0.9912301720419802,
+        "count": 417340
+      },
+      "other": {
+        "top1": 0.8684151892603515,
+        "top5": 0.9411181195591277,
+        "count": 2015187
+      },
+      "register": {
+        "top1": 0.9727604906302926,
+        "top5": 0.997081155502267,
+        "count": 877402
+      },
+      "structural": {
+        "top1": 0.9112620238917212,
+        "top5": 0.9605723939958573,
+        "count": 1691632
+      }
+    },
+    "by_frequency_bucket": {
+      "high": {
+        "top1": 0.9713526022315897,
+        "top5": 0.9953587362041283,
+        "count": 4536049
+      },
+      "medium": {
+        "top1": 0.7492766005776871,
+        "top5": 0.8858538952574424,
+        "count": 774814
+      },
+      "low": {
+        "top1": 0.6613620387242959,
+        "top5": 0.8254096626468199,
+        "count": 586092
+      }
+    }
+  },
+  "itc": {
+    "overall_accuracy": 0.9999915106032565,
+    "macro_f1": 0.9999895483488894,
+    "weighted_f1": 0.9999915106701469,
+    "total_positions": 235588,
+    "per_class": {
+      "GLOBAL_LOAD": {
+        "precision": 1.0,
+        "recall": 0.9998798943069902,
+        "f1": 0.9999399435469342,
+        "support": 16652
+      },
+      "GLOBAL_STORE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4902
+      },
+      "SHARED_LOAD": {
+        "precision": 0.9998483814722159,
+        "recall": 1.0,
+        "f1": 0.9999241849886278,
+        "support": 13189
+      },
+      "SHARED_STORE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4835
+      },
+      "LOCAL_LOAD": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 7530
+      },
+      "LOCAL_STORE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 819
+      },
+      "ARITHMETIC": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 85893
+      },
+      "LOGIC_BITWISE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 26139
+      },
+      "COMPARISON": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 29527
+      },
+      "CONTROL_FLOW": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 9818
+      },
+      "SYNC_BARRIER": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1086
+      },
+      "CONVERSION_MOVE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 34312
+      },
+      "ATOMIC_REDUCE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 886
+      }
+    },
+    "confusion_matrix": [
+      [
+        16650,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        4902,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        13189,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        4835,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        7530,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        819,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        85893,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        26139,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        29527,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        9818,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1086,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        34312,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        886
+      ]
+    ],
+    "class_names": [
+      "GLOBAL_LOAD",
+      "GLOBAL_STORE",
+      "SHARED_LOAD",
+      "SHARED_STORE",
+      "LOCAL_LOAD",
+      "LOCAL_STORE",
+      "ARITHMETIC",
+      "LOGIC_BITWISE",
+      "COMPARISON",
+      "CONTROL_FLOW",
+      "SYNC_BARRIER",
+      "CONVERSION_MOVE",
+      "ATOMIC_REDUCE"
+    ],
+    "common_accuracy": 1.0,
+    "common_classes": [
+      "ARITHMETIC",
+      "CONVERSION_MOVE"
+    ],
+    "rare_accuracy": 0.9999826664239966,
+    "rare_classes": [
+      "GLOBAL_LOAD",
+      "GLOBAL_STORE",
+      "SHARED_LOAD",
+      "SHARED_STORE",
+      "LOCAL_LOAD",
+      "LOCAL_STORE",
+      "LOGIC_BITWISE",
+      "COMPARISON",
+      "CONTROL_FLOW",
+      "SYNC_BARRIER",
+      "ATOMIC_REDUCE"
+    ]
+  }
+}

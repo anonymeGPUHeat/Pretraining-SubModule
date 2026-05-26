@@ -1,0 +1,43 @@
+
+# Instruction MLM — per-instruction masking, no ITC head
+# With probability mask_prob each *instruction span* (opcode … semicolon)
+# is selected; within selected spans, tokens undergo 80/10/10 replacement.
+# Non-instruction spans (directives, labels) fall back to per-token masking.
+
+training_mode: "instruction_mlm"
+mlm_weight: 1.0
+data_dir: "./data/sprocessed/sprocessed"
+cache_dir: "./data/cache"
+tokenizer_path: "./data/tokenizer/ptx_tokenizer.model"
+vocab_size: 8000
+d_model: 768
+num_layers: 12
+num_heads: 8
+d_ff: 3072
+max_seq_length: 2048
+dropout: 0.1
+num_epochs: 5
+batch_size: 16
+gradient_accumulation_steps: 4
+learning_rate: 5e-5
+weight_decay: 0.01
+adam_beta1: 0.9
+adam_beta2: 0.999
+adam_epsilon: 1e-8
+max_grad_norm: 1.0
+warmup_steps: 10000
+mask_prob: 0.15
+label_smoothing: 0.0
+seed: 42
+use_amp: true
+logging_steps: 100
+histogram_steps: 1000
+checkpoint_dir: "./data/checkpoints/instruction_mlm"
+log_dir: "./data/logs/instruction_mlm"
+save_steps: 5000
+keep_last_n: 3
+early_stopping_patience: 5
+early_stopping_min_delta: 1e-4
+num_workers: 20
+pin_memory: true
+overlap: 128

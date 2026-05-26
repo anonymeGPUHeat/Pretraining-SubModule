@@ -1,0 +1,25 @@
+{
+  "metric": "lts__t_sector_op_read_hit_rate.ratio",
+  "threshold": 0.7,
+  "n_high": 191,
+  "n_low": 621,
+  "similarity": {
+    "within_high_mean_cos": 0.920861005783081,
+    "within_low_mean_cos": 0.9040722846984863,
+    "within_avg_mean_cos": 0.9124666452407837,
+    "across_mean_cos": 0.911950945854187,
+    "gap": 0.0005156993865966797
+  },
+  "linear_probe": {
+    "accuracy": 0.7668711656441718,
+    "precision": 0.5,
+    "recall": 0.15789473684210525,
+    "f1": 0.24,
+    "train_size": 649,
+    "test_size": 163,
+    "method": "sklearn_logistic_regression"
+  },
+  "verdict_similarity": "NO SEPARATION \u2014 representations are not memory-sensitive",
+  "verdict_linear": "STRONG \u2014 encoder representations are linearly separable for memory behaviour",
+  "overall_recommendation": "The encoder shows weak memory sensitivity. Fine-tuning will need moderate epochs and a standard learning rate on the encoder (e.g. 3e-5)."
+}
